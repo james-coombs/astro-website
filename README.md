@@ -1,8 +1,6 @@
 # Astrofy | Personal Portfolio Website Template
 
-![Astrofy | Personal Porfolio Website Template](public/social_img.webp)
-
-Astrofy is a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS. Create in minutes a website with a Blog, CV, Project Section, Store, and RSS Feed.
+Astrofy is a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS. Create in minutes a website with a Blog, CV, Project Section, and RSS Feed.
 
 ## Demo
 
@@ -48,9 +46,6 @@ pnpm run dev
 │   │   │   ├── post1.md
 │   │   │   ├── post2.md
 │   │   │   └── post3.md
-│   │   ├── store/
-│   │   │   ├── item1.md
-│   │   │   ├── item2.md
 │   ├── layouts/
 │   │   └── BaseLayout.astro
 │   │   └── PostLayout.astro
@@ -68,7 +63,6 @@ pnpm run dev
 ├── public/
 │   ├── favicon.svg
 │   └── profile.webp
-│   └── social_img.webp
 ├── astro.config.mjs
 ├── tailwind.config.cjs
 ├── package.json
@@ -130,27 +124,6 @@ The cards are primarly used for the Project and the Blog components. They includ
 <HorizontalCard title="Card Title" img="imge_url" desc="Description" url="Link
 URL" target="Optional link target (_blank default)" badge="Optional badge"
 tags={['Array','of','tags']} />
-```
-
-#### HorizontalCard Shop Item
-
-
-This component is already included in the Store layout of the template. In case you want to use it in another place these are the props.
-
-```html
-<HorizontalShopItem
-  title="Item Title"
-  img="imge_url"
-  desc="Item description"
-  pricing="current_price"
-  oldPricing="old_price"
-  checkoutUrl="external store checkout url"
-  badge="Optional badge"
-  url="item details url"
-  custom_link="Custom link url"
-  custom_link_label="Cutom link btn label"
-  target="Optional link target (_self default)"
-/>
 ```
 
 #### Adding a Custom Component
