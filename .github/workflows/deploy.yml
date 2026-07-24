@@ -16,17 +16,18 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      
+
       - name: Install, build, and upload your site
         uses: withastro/action@v6
         with:
-          node-version: 20  # Use a stable version instead of 24
-          build-cmd: pnpm run build  # Make sure this matches your package.json
-      
+          node-version: 22
+          build-cmd: pnpm run build
+          # package-manager: pnpm@latest   # let it auto-detect (will now use pnpm v10 with Node 22 — fine!)
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist  # Astro builds to ./dist by default
+          path: ./dist
 
   deploy:
     needs: build
@@ -37,7 +38,7 @@ jobs:
     steps:
       - name: Download artifact
         uses: actions/download-pages-artifact@v3
-      
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
