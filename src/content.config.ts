@@ -15,6 +15,7 @@ const blogSchema = z.object({
       message: "tags must be unique",
     })
     .default([]),
+  slug: z.string()
 });
 
 export type BlogSchema = z.infer<typeof blogSchema>;

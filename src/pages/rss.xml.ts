@@ -18,7 +18,7 @@ export async function GET(context: APIContext) {
       title: post.data.title,
       pubDate: post.data.pubDate,
       description: post.data.description,
-      link: `/blog/${createSlug(post.data.title, post.id)}/`,
+      link: `/blog/${createSlug(post.data.slug, post.id)}/`,
     })),
   });
 }

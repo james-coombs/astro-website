@@ -4,6 +4,7 @@ description: "AI design tools succeed or fail on one variable: whether the model
 pubDate: "Jul 24 2026"
 heroImage: "/images/blog/told-vs-known-ai-design-tooling/hero.webp"
 tags: ["AI", "designsystems", "machinelearning", "productivity"]
+slug: "told-vs-known-ai-design-tooling"
 ---
 
 *James Coombs is a design engineer who built a 60-component design system with a structured query server and ran a controlled ablation study (n=9) measuring AI tool fidelity against it.*
