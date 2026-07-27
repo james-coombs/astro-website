@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://james-coombs.com/sitemap-index.xml
+RSS: https://james-coombs.com/rss.xml
+LLMstxt: https://jamescoombs.dev/llms.txt

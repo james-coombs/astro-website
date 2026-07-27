@@ -2,7 +2,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import HorizontalCard from "../../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
-import createSlug from "../../lib/createSlug"
+import createSlug from "../../lib/createSlug";
 
 export async function getStaticPaths({ paginate }) {
   const posts = await getCollection("blog");
@@ -11,21 +11,41 @@ export async function getStaticPaths({ paginate }) {
 }
 
 const { page } = Astro.props;
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "James Coombs — Articles & Technical Essays",
+  "description": "Technical essays on AI Governance, Agentic Safety Architecture, Design System Migrations, and Performance Engineering.",
+  "author": {
+    "@type": "Person",
+    "name": "James Coombs",
+    "jobTitle": "Senior Design Engineer"
+  }
+};
 ---
 
-<BaseLayout title="Blog" sideBarActiveItemID="blog">
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Blog</div>
-  </div>
+<BaseLayout title="Blog | James Coombs" sideBarActiveItemID="blog">
+  <!-- JSON-LD Structured Data for Search Engines & AI Search Crawlers -->
+  <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+
+  <header class="mb-8">
+    <h1 class="text-3xl w-full font-bold">Articles &amp; Essays</h1>
+    <p class="text-base-content/80 mt-2 text-lg">
+      Writing on <strong>AI Governance</strong>, <strong>Agentic Safety Architecture</strong>, <strong>Design System Migrations</strong>, and <strong>Performance Engineering</strong>.
+    </p>
+  </header>
 
   {
     page.data.length === 0 ? (
-      <div class="bg-base-200 border-l-4 border-secondary w-full p-4 min-w-full">
-        <p class="font-bold">Sorry!</p>
-        <p>There are no blog posts to show at the moment. Check back later!</p>
+      <div class="bg-base-200 border-l-4 border-secondary w-full p-6 rounded-r-lg">
+        <p class="font-bold text-lg mb-1">Articles coming soon!</p>
+        <p class="text-sm text-base-content/70">
+          Check back shortly for upcoming essays on CLAUDE.md compliance data, agentic safety architectures, and component migration engines.
+        </p>
       </div>
     ) : (
-      <ul>
+      <section class="space-y-4">
         {page.data.map((post) => (
           <>
             <HorizontalCard
@@ -40,25 +60,23 @@ const { page } = Astro.props;
             <div class="divider my-0" />
           </>
         ))}
-      </ul>
+      </section>
     )
   }
 
-  <div class="flex justify-between">
+  <!-- Accessible Pagination Navigation -->
+  <nav class="flex justify-between my-10" aria-label="Blog pagination">
     {
       page.url.prev ? (
-        <a href={page.url.prev} class="btn btn-ghost my-10 mx-5">
-          {" "}
+        <a href={page.url.prev} class="btn btn-ghost mx-2 flex items-center gap-2">
           <svg
-            class="h-6 w-6 fill-current md:h-8 md:w-8"
+            class="h-5 w-5 fill-current"
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
             viewBox="0 0 24 24"
           >
             <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
-          </svg>{" "}
-          Recent posts
+          </svg>
+          <span>Recent posts</span>
         </a>
       ) : (
         <div />
@@ -66,16 +84,13 @@ const { page } = Astro.props;
     }
     {
       page.url.next ? (
-        <a href={page.url.next} class="btn btn-ghost my-10 mx-5">
-          Older Posts{" "}
+        <a href={page.url.next} class="btn btn-ghost mx-2 flex items-center gap-2">
+          <span>Older posts</span>
           <svg
-            class="h-6 w-6 fill-current md:h-8 md:w-8"
+            class="h-5 w-5 fill-current"
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
             viewBox="0 0 24 24"
           >
-            {" "}
             <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
           </svg>
         </a>
@@ -83,5 +98,5 @@ const { page } = Astro.props;
         <div />
       )
     }
-  </div>
+  </nav>
 </BaseLayout>

@@ -2,56 +2,65 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
+import createSlug from "../lib/createSlug";
 
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 
 const last_posts = posts.slice(0, 3);
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "James Coombs",
+  jobTitle: "Senior Design Engineer",
+  description:
+    "Building the systems and architecture that govern how humans and AI write code.",
+  knowsAbout: [
+    "AI Governance",
+    "Design Engineering",
+    "Performance Engineering",
+    "Developer Experience",
+    "TypeScript",
+    "React",
+    "Next.js",
+  ],
+};
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <!-- @TODO: Personal intro section <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
-    <div class="py-2">
-      <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
-      </text>
-    </div>
-  </div> -->
+  <!-- JSON-LD Structured Data for Search Engine & AI Agent Discovery -->
+  <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
 
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+  <div class="pb-12 mt-5">
+    <div class="text-xl py-1">Hello!</div>
+    <h1 class="text-5xl font-bold">I'm James Coombs</h1>
+    <h2 class="text-3xl py-3 font-bold text-primary">
+      Senior Design Engineer | Founding the AI-Augmented Developer Experience
+    </h2>
+
+    <div class="py-2">
+      <p class="text-lg">
+        I build the systems and architecture that govern how humans and AI write
+        code. Most Design Engineering stops at components. I focus on <strong
+          >Governance at Scale</strong
+        >: building the infrastructure and codified rules that let AI agents
+        ship production code safely.
+      </p>
+    </div>
+
+    <div class="py-2">
+      <p class="text-lg">
+        My background in Psychology is my edge in Developer Experience;
+        architecting the mental models and "escape hatches" that allow
+        engineering orgs to move fast without breaking.
+      </p>
+    </div>
   </div>
 
-  <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  />
-
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+    <h2 class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</h2>
   </div>
 
   {

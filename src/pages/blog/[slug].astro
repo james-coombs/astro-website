@@ -1,8 +1,9 @@
 ---
-import { CollectionEntry, getCollection, render } from "astro:content";
-import { BlogSchema } from "../../content/config";
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import type { BlogSchema } from "../../content.config";
 import PostLayout from "../../layouts/PostLayout.astro";
-import createSlug from "../../lib/createSlug"
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import createSlug from "../../lib/createSlug";
 
 export async function getStaticPaths() {
   const postEntries = await getCollection("blog");
@@ -18,7 +19,32 @@ interface Props {
 
 const { entry } = Astro.props;
 const post: BlogSchema = entry.data;
-const { Content } = await render(entry);
+
+const { Content, headings } = await render(entry);
+
+const wordCount = entry.body ? entry.body.trim().split(/\s+/g).length : 0;
+const readTime = Math.max(1, Math.ceil(wordCount / 200));
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  headline: post.title,
+  description: post.description,
+  datePublished: post.pubDate
+    ? new Date(post.pubDate).toISOString()
+    : undefined,
+  dateModified: post.updatedDate
+    ? new Date(post.updatedDate).toISOString()
+    : post.pubDate
+      ? new Date(post.pubDate).toISOString()
+      : undefined,
+  author: {
+    "@type": "Person",
+    name: "James Coombs",
+    jobTitle: "Senior Design Engineer",
+  },
+  keywords: post.tags?.join(", ") || "",
+};
 ---
 
 <PostLayout
@@ -30,5 +56,85 @@ const { Content } = await render(entry);
   badge={post.badge}
   tags={post.tags}
 >
-  <Content />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+
+  <!-- 1. BREADCRUMBS LOCATION: Above article meta -->
+  <Breadcrumbs
+    items={[{ label: "Blog", href: "/blog" }, { label: post.title }]}
+  />
+
+  <div
+    class="flex items-center gap-2 text-xs text-base-content/70 mb-6 font-medium"
+  >
+    <span>{readTime} min read</span>
+    <span>•</span>
+    <span>{wordCount} words</span>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+    <div class={headings.length > 0 ? "lg:col-span-3" : "lg:col-span-4"}>
+      <Content />
+    </div>
+
+    {
+      headings.length > 0 && (
+        <aside class="hidden lg:block lg:col-span-1">
+          <div class="sticky top-24 p-4 rounded-xl bg-base-200/50 border border-base-300 text-sm">
+            <h2 class="font-bold mb-3 text-xs uppercase tracking-wider text-base-content/60">
+              On This Page
+            </h2>
+            <nav class="space-y-2">
+              {headings.map((heading) => (
+                <a
+                  href={`#${heading.slug}`}
+                  class:list={[
+                    "block transition-colors hover:text-primary leading-tight text-xs",
+                    heading.depth === 3
+                      ? "pl-3 text-base-content/70"
+                      : "font-medium text-base-content/90",
+                  ]}
+                >
+                  {heading.text}
+                </a>
+              ))}
+            </nav>
+          </div>
+        </aside>
+      )
+    }
+  </div>
 </PostLayout>
+
+<!-- @TODO: COPY/PASTE BUTTON SCRIPT LOCATION: Bottom of page -->
+<!-- <script>
+  const attachCopyButtons = () => {
+    const codeBlocks = document.querySelectorAll("pre");
+
+    codeBlocks.forEach((codeBlock) => {
+      // Prevent duplicate buttons on Astro page navigations
+      if (codeBlock.querySelector(".copy-code-btn")) return;
+
+      codeBlock.style.position = "relative";
+
+      const button = document.createElement("button");
+      button.className =
+        "copy-code-btn btn btn-xs btn-ghost absolute top-2 right-2 text-xs opacity-70 hover:opacity-100 bg-base-300/80 border border-base-content/10 transition-all";
+      button.innerText = "Copy";
+
+      button.addEventListener("click", async () => {
+        const codeText = codeBlock.querySelector("code")?.innerText || codeBlock.innerText;
+        await navigator.clipboard.writeText(codeText.trim());
+        button.innerText = "Copied!";
+        setTimeout(() => {
+          button.innerText = "Copy";
+        }, 2000);
+      });
+
+      codeBlock.appendChild(button);
+    });
+  };
+
+  // Run on initial load and View Transitions
+  attachCopyButtons();
+  document.addEventListener("astro:page-load", attachCopyButtons);
+</script> -->

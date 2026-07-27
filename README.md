@@ -31,7 +31,7 @@ pnpm run dev
 ```php
 ├── src/
 │   ├── components/
-│   │   ├── cv/
+│   │   ├── resume/
 │   │   │   ├── TimeLine
 │   │   ├── BaseHead.astro
 │   │   ├── Card.astro
@@ -53,7 +53,7 @@ pnpm run dev
 │   │   ├── blog/
 │   │   │   ├── [...page].astro
 │   │   │   ├── [slug].astro
-│   │   └── cv.astro
+│   │   └── resume.astro
 │   │   └── index.astro
 │   │   └── projects.astro
 │   │   └── rss.xml.js

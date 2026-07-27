@@ -1,0 +1,29 @@
+# James Coombs
+
+> Senior Design Engineer specializing in AI Governance, Agentic Safety Architecture, Design System Migrations at scale, and Web Performance Engineering.
+
+## Context & Core Technical Focus
+- **AI Governance & Safety Architecture**: Codified enforcement layers, runtime AST hooks, and active gating for LLM coding agents.
+- **Design System Engineering**: Scaling headless component systems (Radix UI, Tailwind CSS, Astro, React) and building automated component migration tooling.
+- **Performance Engineering**: DOM rendering optimizations, script execution reductions, and Interaction to Next Paint (INP) overhauls.
+- **Developer Experience (DX)**: Developer tooling, CLI utilities, and human-in-the-loop workflows bridging cognitive psychology and software architecture.
+
+## Primary Career Systems & Achievements
+- [Agentic AI Governance Layer](https://jamescoombs.dev/blog/ai-agent-safety-architecture): Codified safety system for AI agents enforcing runtime hooks and repository standards (Rev).
+- [Automated Component Migration Engine](https://jamescoombs.dev/blog/scoring-gating-ratcheting-migration-engine): CLI suite and 15-state bot with 5-factor confidence scoring that safely migrated 962+ files across 44 asset bundles (Rev).
+- [High-Performance Transcript Rendering Engine](https://jamescoombs.dev/resume#rev): Architectural overhaul reducing render times by 94% and INP from 3,297ms to 112ms (Rev).
+- [Scalable Radix & Tailwind Component System](https://jamescoombs.dev/resume#rev): Enterprise design system scaled from ground zero to 62+ accessible production components (Rev).
+- [Algolia & Next.js Dynamic Page Architecture](https://jamescoombs.dev/resume#cervello): Automated dynamic landing page creation pipeline for multi-channel marketing campaigns (Cervello).
+
+## Primary Pages
+- [Home Page](https://jamescoombs.dev/): Engineering discipline overview and impact highlights.
+- [Resume & Experience](https://jamescoombs.dev/resume): Detailed timeline with deep-linked career achievements, leadership roles, and skill matrix.
+- [Featured Projects](https://jamescoombs.dev/projects): Categorized listing of production systems and personal full-stack projects.
+- [Technical Blog Index](https://jamescoombs.dev/blog): Essays on AI safety, component migration engines, and web performance.
+- [RSS Feed](https://jamescoombs.dev/rss.xml): Machine-readable XML feed of technical writing.
+
+## Foundational & Personal Projects
+- [Yamba](https://github.com/james-coombs/yamba-client): Ember.js and Ruby on Rails full-stack application.
+- [Back\Log](https://github.com/james-coombs/back-log-client): Game tracking application using Ruby on Rails, PostgreSQL, and Handlebars.
+- [Sweaters for Turtles](https://github.com/chardeemcdennis/sweaters-for-turtles-client): E-commerce mock app with Express.js, MongoDB, and Stripe API.
+- [Biological Samples CSV API](https://github.com/james-coombs/rails-csv-api): Parsing fixture converting proprietary CSV files to JSON endpoints.
