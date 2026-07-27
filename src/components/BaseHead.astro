@@ -1,6 +1,4 @@
 ---
-// Import the global.css file here so that it is included on
-// all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
 
 export interface Props {
@@ -10,7 +8,16 @@ export interface Props {
 	ogType?: string;
 }
 
-const { title, description, /*@TODO Add/use custom social_img image = '/social_img.webp', */ ogType = 'website' } = Astro.props;
+const { 
+	title, 
+	description, 
+	image = '/images/social-card.webp', // Default social image fallback
+	ogType = 'website' 
+} = Astro.props;
+
+// Canonical URL & Absolute Image Path
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL(image, Astro.url);
 ---
 
 <!-- Global Metadata -->
@@ -19,21 +26,32 @@ const { title, description, /*@TODO Add/use custom social_img image = '/social_i
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <meta name="generator" content={Astro.generator} />
 
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- RSS Feed Auto-Discovery -->
+<link 
+  rel="alternate" 
+  type="application/rss+xml" 
+  title={title} 
+  href={new URL('/rss.xml', Astro.site)} 
+/>
+
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
 
-<!-- Open Graph / Facebook -->
+<!-- Open Graph / Facebook / LinkedIn -->
 <meta property="og:type" content={ogType} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<!-- <meta property="og:image" content={new URL(image, Astro.url)} /> -->
+<meta property="og:image" content={socialImageURL} />
 
-<!-- Twitter -->
+<!-- Twitter / X -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<!-- <meta property="twitter:image" content={new URL(image, Astro.url)} /> -->
+<meta property="twitter:image" content={socialImageURL} />
