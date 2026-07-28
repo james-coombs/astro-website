@@ -1,14 +1,25 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = "James Coombs | Software Engineer";
+export const SITE_TITLE =
+  "James Coombs | Senior Design Engineer & AI Governance";
 
 export const SITE_DESCRIPTION =
-  "James Coombs | Software Engineer Personal Portfolio Website and Blog";
+  "Senior Design Engineer specializing in AI Governance, Agentic Safety Architecture, Design System Migrations at scale, and Web Performance Engineering.";
+
+export const SITE_URL = "https://james-coombs.com";
+export const SITE_AUTHOR = "James Coombs";
 
 export const GENERATE_SLUG_FROM_TITLE = true;
 
 export const TRANSITION_API = true;
+
+export const SOCIAL_LINKS = {
+  github: "https://github.com/james-coombs",
+  linkedin: "https://www.linkedin.com/in/james-coombs",
+  rss: "/rss.xml",
+  llms: "/llms.txt",
+};
 
 export interface Project {
   id: string;
@@ -206,23 +217,4 @@ export const SKILLS_DATA: Skill[] = [
   { name: "Developer Experience (DX)" },
   { name: "REST APIs & Microservices" },
   { name: "SEO & Web Metadata" },
-  // @TODO: Optimize for SEO/AEO
-  // { name: "HTML5" },
-  // { name: "CSS3" },
-  // { name: "Node" },
-  // { name: "SASS" },
-  // { name: "React" },
-  // { name: "Redux", },
-  // { name: "Backbone" },
-  // { name: "Ember" },
-  // { name: "C#" },
-  // { name: "Ruby" },
-  // { name: "Rails" },
-  // { name: "SQL" },
-  // { name: "MongoDB" },
-  // { name: ".NET" },
-  // { name: "jQuery" },
-  // { name: "Bootstrap" },
-  // { name: "Python" },
-  // { name: "Git", class: "git" },
 ];

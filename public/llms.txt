@@ -9,18 +9,18 @@
 - **Developer Experience (DX)**: Developer tooling, CLI utilities, and human-in-the-loop workflows bridging cognitive psychology and software architecture.
 
 ## Primary Career Systems & Achievements
-- [Agentic AI Governance Layer](https://jamescoombs.dev/blog/ai-agent-safety-architecture): Codified safety system for AI agents enforcing runtime hooks and repository standards (Rev).
-- [Automated Component Migration Engine](https://jamescoombs.dev/blog/scoring-gating-ratcheting-migration-engine): CLI suite and 15-state bot with 5-factor confidence scoring that safely migrated 962+ files across 44 asset bundles (Rev).
-- [High-Performance Transcript Rendering Engine](https://jamescoombs.dev/resume#rev): Architectural overhaul reducing render times by 94% and INP from 3,297ms to 112ms (Rev).
-- [Scalable Radix & Tailwind Component System](https://jamescoombs.dev/resume#rev): Enterprise design system scaled from ground zero to 62+ accessible production components (Rev).
-- [Algolia & Next.js Dynamic Page Architecture](https://jamescoombs.dev/resume#cervello): Automated dynamic landing page creation pipeline for multi-channel marketing campaigns (Cervello).
+- [Agentic AI Governance Layer](https://james-coombs.com/blog/ai-agent-safety-architecture): Codified safety system for AI agents enforcing runtime hooks and repository standards (Rev).
+- [Automated Component Migration Engine](https://james-coombs.com/blog/scoring-gating-ratcheting-migration-engine): CLI suite and 15-state bot with 5-factor confidence scoring that safely migrated 962+ files across 44 asset bundles (Rev).
+- [High-Performance Transcript Rendering Engine](https://james-coombs.com/resume#rev): Architectural overhaul reducing render times by 94% and INP from 3,297ms to 112ms (Rev).
+- [Scalable Radix & Tailwind Component System](https://james-coombs.com/resume#rev): Enterprise design system scaled from ground zero to 62+ accessible production components (Rev).
+- [Algolia & Next.js Dynamic Page Architecture](https://james-coombs.com/resume#cervello): Automated dynamic landing page creation pipeline for multi-channel marketing campaigns (Cervello).
 
 ## Primary Pages
-- [Home Page](https://jamescoombs.dev/): Engineering discipline overview and impact highlights.
-- [Resume & Experience](https://jamescoombs.dev/resume): Detailed timeline with deep-linked career achievements, leadership roles, and skill matrix.
-- [Featured Projects](https://jamescoombs.dev/projects): Categorized listing of production systems and personal full-stack projects.
-- [Technical Blog Index](https://jamescoombs.dev/blog): Essays on AI safety, component migration engines, and web performance.
-- [RSS Feed](https://jamescoombs.dev/rss.xml): Machine-readable XML feed of technical writing.
+- [Home Page](https://james-coombs.com/): Engineering discipline overview and impact highlights.
+- [Resume & Experience](https://james-coombs.com/resume): Detailed timeline with deep-linked career achievements, leadership roles, and skill matrix.
+- [Featured Projects](https://james-coombs.com/projects): Categorized listing of production systems and personal full-stack projects.
+- [Technical Blog Index](https://james-coombs.com/blog): Essays on AI safety, component migration engines, and web performance.
+- [RSS Feed](https://james-coombs.com/rss.xml): Machine-readable XML feed of technical writing.
 
 ## Foundational & Personal Projects
 - [Yamba](https://github.com/james-coombs/yamba-client): Ember.js and Ruby on Rails full-stack application.
