@@ -37,6 +37,14 @@ const socialImageURL = new URL(image, Astro.url);
   href={new URL("/rss.xml", Astro.site)}
 />
 
+<!-- LLMs.txt Auto-Discovery -->
+<link
+  rel="alternate"
+  type="text/markdown"
+  title="LLMs.txt"
+  href={new URL("/llms.txt", Astro.site)}
+/>
+
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title} />

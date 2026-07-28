@@ -1,8 +1,9 @@
 {
-  "name": "astrofy",
-  "description": "Astrofy is a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS. Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed.",
+  "name": "james-coombs-astro-website",
+  "description": "Personal website, portfolio, and technical articles by James Coombs.",
+  "author": "James Coombs",
   "type": "module",
-  "version": "3.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
