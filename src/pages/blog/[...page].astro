@@ -1,38 +1,56 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import HorizontalCard from "../../components/HorizontalCard.astro";
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
+import type { PaginateFunction, Page } from "astro";
 import createSlug from "../../lib/createSlug";
 
-export async function getStaticPaths({ paginate }) {
+export async function getStaticPaths({
+  paginate,
+}: {
+  paginate: PaginateFunction;
+}) {
   const posts = await getCollection("blog");
   posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
   return paginate(posts, { pageSize: 10 });
 }
+
+type Props = {
+  page: Page<CollectionEntry<"blog">>;
+};
 
 const { page } = Astro.props;
 
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "Blog",
-  "name": "James Coombs — Articles & Technical Essays",
-  "description": "Technical essays on AI Governance, Agentic Safety Architecture, Design System Migrations, and Performance Engineering.",
-  "author": {
+  name: "James Coombs — Articles & Technical Essays",
+  description:
+    "Technical essays on AI Governance, Agentic Safety Architecture, Design System Migrations, and Performance Engineering.",
+  author: {
     "@type": "Person",
-    "name": "James Coombs",
-    "jobTitle": "Senior Design Engineer"
-  }
+    name: "James Coombs",
+    jobTitle: "Senior Design Engineer",
+  },
 };
 ---
 
 <BaseLayout title="Blog | James Coombs" sideBarActiveItemID="blog">
   <!-- JSON-LD Structured Data for Search Engines & AI Search Crawlers -->
-  <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(schemaData)}
+  />
 
   <header class="mb-8">
     <h1 class="text-3xl w-full font-bold">Articles &amp; Essays</h1>
     <p class="text-base-content/80 mt-2 text-lg">
-      Writing on <strong>AI Governance</strong>, <strong>Agentic Safety Architecture</strong>, <strong>Design System Migrations</strong>, and <strong>Performance Engineering</strong>.
+      Writing on <strong>AI Governance</strong>, <strong
+        >Agentic Safety Architecture</strong
+      >, <strong>Design System Migrations</strong>, and <strong
+        >Performance Engineering</strong
+      >.
     </p>
   </header>
 
@@ -41,12 +59,13 @@ const schemaData = {
       <div class="bg-base-200 border-l-4 border-secondary w-full p-6 rounded-r-lg">
         <p class="font-bold text-lg mb-1">Articles coming soon!</p>
         <p class="text-sm text-base-content/70">
-          Check back shortly for upcoming essays on CLAUDE.md compliance data, agentic safety architectures, and component migration engines.
+          Check back shortly for upcoming essays on CLAUDE.md compliance data,
+          agentic safety architectures, and component migration engines.
         </p>
       </div>
     ) : (
       <section class="space-y-4">
-        {page.data.map((post) => (
+        {page.data.map((post: CollectionEntry<"blog">) => (
           <>
             <HorizontalCard
               title={post.data.title}
@@ -68,7 +87,10 @@ const schemaData = {
   <nav class="flex justify-between my-10" aria-label="Blog pagination">
     {
       page.url.prev ? (
-        <a href={page.url.prev} class="btn btn-ghost mx-2 flex items-center gap-2">
+        <a
+          href={page.url.prev}
+          class="btn btn-ghost mx-2 flex items-center gap-2"
+        >
           <svg
             class="h-5 w-5 fill-current"
             xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +106,10 @@ const schemaData = {
     }
     {
       page.url.next ? (
-        <a href={page.url.next} class="btn btn-ghost mx-2 flex items-center gap-2">
+        <a
+          href={page.url.next}
+          class="btn btn-ghost mx-2 flex items-center gap-2"
+        >
           <span>Older posts</span>
           <svg
             class="h-5 w-5 fill-current"

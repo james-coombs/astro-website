@@ -1,18 +1,18 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 export interface Props {
-	title: string;
-	description: string;
-	image?: string;
-	ogType?: string;
+  title: string;
+  description: string;
+  image?: string;
+  ogType?: string;
 }
 
-const { 
-	title, 
-	description, 
-	image = '/images/social-card.webp', // Default social image fallback
-	ogType = 'website' 
+const {
+  title,
+  description,
+  image = "/images/social-card.webp", // Default social image fallback
+  ogType = "website",
 } = Astro.props;
 
 // Canonical URL & Absolute Image Path
@@ -30,11 +30,11 @@ const socialImageURL = new URL(image, Astro.url);
 <link rel="canonical" href={canonicalURL} />
 
 <!-- RSS Feed Auto-Discovery -->
-<link 
-  rel="alternate" 
-  type="application/rss+xml" 
-  title={title} 
-  href={new URL('/rss.xml', Astro.site)} 
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title={title}
+  href={new URL("/rss.xml", Astro.site)}
 />
 
 <!-- Primary Meta Tags -->

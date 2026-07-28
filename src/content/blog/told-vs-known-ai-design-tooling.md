@@ -2,26 +2,26 @@
 title: '"Told" vs. "Known": The One Variable That Predicts AI Design Tool Quality'
 description: "AI design tools succeed or fail on one variable: whether the model is told what to do or can query what is actually known. The distinction that predicts output quality."
 pubDate: "Jul 24 2026"
-heroImage: "/images/blog/told-vs-known-ai-design-tooling/hero.webp"
+heroImage: "../../assets/blog/told-vs-known-ai-design-tooling/hero.webp"
 tags: ["AI", "designsystems", "machinelearning", "productivity"]
 slug: "told-vs-known-ai-design-tooling"
 ---
 
-*James Coombs is a design engineer who built a 60-component design system with a structured query server and ran a controlled ablation study (n=9) measuring AI tool fidelity against it.*
+_James Coombs is a design engineer who built a 60-component design system with a structured query server and ran a controlled ablation study (n=9) measuring AI tool fidelity against it._
 
-After evaluating six categories of AI design-to-code tools against a 60-component design system, one variable predicted output quality better than anything else: whether the tool had been *told* about the design system or *knew* it.
+After evaluating six categories of AI design-to-code tools against a 60-component design system, one variable predicted output quality better than anything else: whether the tool had been _told_ about the design system or _knew_ it.
 
 **"Told" tools**: You describe your components in natural language or docs. The AI interprets. It generates something that looks like your Button but uses the wrong prop names, the wrong import path, or a plausible-but-nonexistent variant.
 
 **"Known" tools**: The AI queries a structured index of your actual components. It gets the exact name, exact props, exact import, exact usage examples. No interpretation gap.
 
-| Tool type | Awareness | Typical fidelity |
-|-----------|-----------|-----------------|
-| General AI prototypers (v0, Bolt, Lovable) | Told (generic framework knowledge) | ~50-60% |
-| AI design tools (Claude Design, Pencil) | Told (LLM ingestion of your docs) | ~70-80% |
-| AST-parsed indexers (Builder.io Visual Copilot) | **Known** (parsed component source) | ~95-100% |
-| Manual component maps (Figma Code Connect) | **Known** (hand-mapped per component) | 100% |
-| AI agent + structured query (MCP server) | **Known** (live query against real source) | 100% |
+| Tool type                                       | Awareness                                  | Typical fidelity |
+| ----------------------------------------------- | ------------------------------------------ | ---------------- |
+| General AI prototypers (v0, Bolt, Lovable)      | Told (generic framework knowledge)         | ~50-60%          |
+| AI design tools (Claude Design, Pencil)         | Told (LLM ingestion of your docs)          | ~70-80%          |
+| AST-parsed indexers (Builder.io Visual Copilot) | **Known** (parsed component source)        | ~95-100%         |
+| Manual component maps (Figma Code Connect)      | **Known** (hand-mapped per component)      | 100%             |
+| AI agent + structured query (MCP server)        | **Known** (live query against real source) | 100%             |
 
 The gap between "Told" and "Known" isn't incremental. It's categorical.
 
@@ -41,7 +41,7 @@ And your design system changes. Components get new variants, tokens get renamed.
 
 ## The three "Known" approaches
 
-**AST-parsed component index.** Parse your source into a structured index: component names, prop types (from TypeScript), variants, tokens. Regenerate on build. Captures structure but not intent; doesn't know *when* to use Dialog vs. Sheet.
+**AST-parsed component index.** Parse your source into a structured index: component names, prop types (from TypeScript), variants, tokens. Regenerate on build. Captures structure but not intent; doesn't know _when_ to use Dialog vs. Sheet.
 
 **Hand-mapped component bridge (Figma Code Connect).** Manually map each Figma component to its React counterpart. 100% fidelity by definition. But manual maintenance: every new component or variant needs an update. Scales linearly with component count.
 

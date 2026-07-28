@@ -8,34 +8,40 @@ const allProjects = [...CAREER_PROJECTS, ...PERSONAL_PROJECTS];
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "James Coombs — Portfolio Projects & Systems",
-  "description": "Production architectures, AI governance frameworks, migration engines, and early development projects by James Coombs.",
-  "itemListElement": allProjects.map((project, index) => ({
+  name: "James Coombs — Portfolio Projects & Systems",
+  description:
+    "Production architectures, AI governance frameworks, migration engines, and early development projects by James Coombs.",
+  itemListElement: allProjects.map((project, index) => ({
     "@type": "ListItem",
-    "position": index + 1,
-    "item": {
+    position: index + 1,
+    item: {
       "@type": "SoftwareSourceCode",
-      "name": project.title,
-      "description": project.description,
-      "programmingLanguage": project.technologies,
-      "codeRepository": project.repo,
-      "author": {
+      name: project.title,
+      description: project.description,
+      programmingLanguage: project.technologies,
+      codeRepository: project.repo,
+      author: {
         "@type": "Person",
-        "name": "James Coombs"
-      }
-    }
-  }))
+        name: "James Coombs",
+      },
+    },
+  })),
 };
 ---
 
 <BaseLayout title="Projects | James Coombs" sideBarActiveItemID="projects">
   <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(schemaData)}
+  />
 
   <header class="mb-8">
     <h1 class="text-3xl w-full font-bold">Projects &amp; Engineering Work</h1>
     <p class="text-base-content/80 mt-2 text-lg">
-      A collection of production architectures, AI governance tools, system migrations, and early full-stack projects.
+      A collection of production architectures, AI governance tools, system
+      migrations, and early full-stack projects.
     </p>
   </header>
 
@@ -44,7 +50,8 @@ const schemaData = {
     <div class="mb-6 pb-2 border-b border-base-300">
       <h2 class="text-2xl font-bold text-primary">Career Work</h2>
       <p class="text-sm text-base-content/70 mt-1">
-        Production systems, AI safety layers, design system engines, and high-performance web architecture.
+        Production systems, AI safety layers, design system engines, and
+        high-performance web architecture.
       </p>
     </div>
 
@@ -70,9 +77,12 @@ const schemaData = {
   <!-- Section 2: Developer in Training / Personal Work -->
   <section class="mb-10">
     <div class="mb-6 pb-2 border-b border-base-300">
-      <h2 class="text-2xl font-bold text-secondary">Developer in Training / Personal Work</h2>
+      <h2 class="text-2xl font-bold text-secondary">
+        Developer in Training / Personal Work
+      </h2>
       <p class="text-sm text-base-content/70 mt-1">
-        Early full-stack applications, experimental pet projects, and foundational software built during initial training.
+        Early full-stack applications, experimental pet projects, and
+        foundational software built during initial training.
       </p>
     </div>
 

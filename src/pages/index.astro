@@ -31,7 +31,11 @@ const schemaData = {
 
 <BaseLayout sideBarActiveItemID="home">
   <!-- JSON-LD Structured Data for Search Engine & AI Agent Discovery -->
-  <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(schemaData)}
+  />
 
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Hello!</div>
@@ -79,3 +83,27 @@ const schemaData = {
     ))
   }
 </BaseLayout>
+
+<script is:inline type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "James Coombs",
+      "jobTitle": "Senior Design Engineer",
+      "url": "https://james-coombs.com",
+      "sameAs": [
+        "https://github.com/james-coombs",
+        "https://linkedin.com/in/jamescoombs"
+      ],
+      "knowsAbout": [
+        "AI Governance",
+        "Design Systems",
+        "Web Performance Engineering",
+        "Astro Framework",
+        "TypeScript"
+      ]
+    }
+  }
+</script>

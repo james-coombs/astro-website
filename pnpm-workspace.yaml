@@ -1,3 +1,5 @@
 allowBuilds:
   esbuild: false
   sharp: false
+overrides:
+  "typescript": "^5.8.0"

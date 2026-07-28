@@ -1,6 +1,16 @@
 User-agent: *
 Allow: /
 
+# Explicit AI Scraper Access for AEO
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
 Sitemap: https://james-coombs.com/sitemap-index.xml
 RSS: https://james-coombs.com/rss.xml
-LLMstxt: https://jamescoombs.dev/llms.txt
+LLMstxt: https://james-coombs.com/llms.txt

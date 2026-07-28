@@ -22,6 +22,7 @@ const post: BlogSchema = entry.data;
 
 const { Content, headings } = await render(entry);
 
+// Word count and reading time calculation with fallback
 const wordCount = entry.body ? entry.body.trim().split(/\s+/g).length : 0;
 const readTime = Math.max(1, Math.ceil(wordCount / 200));
 
@@ -47,18 +48,14 @@ const articleSchema = {
 };
 ---
 
-<PostLayout
-  title={post.title}
-  description={post.description}
-  pubDate={post.pubDate}
-  heroImage={post.heroImage}
-  updatedDate={post.updatedDate}
-  badge={post.badge}
-  tags={post.tags}
->
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+<PostLayout {...post}>
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(articleSchema)}
+  />
 
-  <!-- 1. BREADCRUMBS LOCATION: Above article meta -->
+  <!-- Breadcrumbs -->
   <Breadcrumbs
     items={[{ label: "Blog", href: "/blog" }, { label: post.title }]}
   />
@@ -79,18 +76,18 @@ const articleSchema = {
     {
       headings.length > 0 && (
         <aside class="hidden lg:block lg:col-span-1">
-          <div class="sticky top-24 p-4 rounded-xl bg-base-200/50 border border-base-300 text-sm">
-            <h2 class="font-bold mb-3 text-xs uppercase tracking-wider text-base-content/60">
+          <div class="sticky top-24 p-4 rounded-xl bg-base-200/50 border border-base-300 text-sm max-h-[calc(100vh-8rem)] overflow-y-auto scrollbar-thin">
+            <h2 class="font-bold mb-3 text-xs uppercase tracking-wider text-base-content/60 text-center border-b border-base-300/50 pb-2 pt-1 mt-0">
               On This Page
             </h2>
-            <nav class="space-y-2">
+            <nav class="space-y-1.5">
               {headings.map((heading) => (
                 <a
                   href={`#${heading.slug}`}
                   class:list={[
-                    "block transition-colors hover:text-primary leading-tight text-xs",
+                    "block transition-colors hover:text-primary leading-snug text-xs rounded-md py-1 px-1.5 hover:bg-base-300/40",
                     heading.depth === 3
-                      ? "pl-3 text-base-content/70"
+                      ? "pl-4 text-base-content/70 text-[11px]"
                       : "font-medium text-base-content/90",
                   ]}
                 >
@@ -105,7 +102,7 @@ const articleSchema = {
   </div>
 </PostLayout>
 
-<!-- @TODO: COPY/PASTE BUTTON SCRIPT LOCATION: Bottom of page -->
+<!-- @TODO Code Block Copy Button Script -->
 <!-- <script>
   const attachCopyButtons = () => {
     const codeBlocks = document.querySelectorAll("pre");
@@ -122,7 +119,8 @@ const articleSchema = {
       button.innerText = "Copy";
 
       button.addEventListener("click", async () => {
-        const codeText = codeBlock.querySelector("code")?.innerText || codeBlock.innerText;
+        const codeText =
+          codeBlock.querySelector("code")?.innerText || codeBlock.innerText;
         await navigator.clipboard.writeText(codeText.trim());
         button.innerText = "Copied!";
         setTimeout(() => {
@@ -134,7 +132,7 @@ const articleSchema = {
     });
   };
 
-  // Run on initial load and View Transitions
+  // Run on initial load and Astro View Transitions
   attachCopyButtons();
   document.addEventListener("astro:page-load", attachCopyButtons);
 </script> -->

@@ -6,10 +6,11 @@ import { SKILLS_DATA } from "src/config";
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "James Coombs",
-  "jobTitle": "Senior Design Engineer",
-  "description": "Senior Design Engineer specializing in AI Governance, Design Systems at scale, Developer Experience, and Web Performance Engineering.",
-  "knowsAbout": [
+  name: "James Coombs",
+  jobTitle: "Senior Design Engineer",
+  description:
+    "Senior Design Engineer specializing in AI Governance, Design Systems at scale, Developer Experience, and Web Performance Engineering.",
+  knowsAbout: [
     "AI Governance",
     "LLM Engineering",
     "Performance Engineering",
@@ -19,37 +20,50 @@ const schemaData = {
     "Next.js",
     "Tailwind CSS",
     "Radix UI",
-    "Astro"
+    "Astro",
   ],
-  "worksFor": {
+  worksFor: {
     "@type": "Organization",
-    "name": "Rev"
+    name: "Rev",
   },
-  "alumniOf": [
+  alumniOf: [
     {
       "@type": "EducationalOrganization",
-      "name": "University of California, Irvine"
+      name: "University of California, Irvine",
     },
     {
       "@type": "EducationalOrganization",
-      "name": "General Assembly"
-    }
-  ]
+      name: "General Assembly",
+    },
+  ],
 };
 ---
 
-<BaseLayout title="James Coombs | Senior Design Engineer Resume" sideBarActiveItemID="resume">
+<BaseLayout
+  title="James Coombs | Senior Design Engineer Resume"
+  sideBarActiveItemID="resume"
+>
   <!-- JSON-LD Structured Data for AEO / SEO -->
-  <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(schemaData)}
+  />
 
   <header class="mb-5">
     <h1 class="text-3xl w-full font-bold">James Coombs — Resume</h1>
-    <p class="text-sm text-base-content/70 mt-1">Senior Design Engineer &amp; AI Systems Architect</p>
+    <p class="text-sm text-base-content/70 mt-1">
+      Senior Design Engineer &amp; AI Systems Architect
+    </p>
   </header>
 
   <section class="mb-10 text-justify">
     <p>
-      <strong>James Coombs</strong> is a Senior Design Engineer specializing in Design Systems at scale, AI Governance, and high-demand web application performance. Leverages a background in Psychology to engineer intuitive developer experiences, agentic AI workflows, and resilient front-end architecture that allows engineering organizations to move fast without breaking.
+      <strong>James Coombs</strong> is a Senior Design Engineer specializing in Design
+      Systems at scale, AI Governance, and high-demand web application performance.
+      Leverages a background in Psychology to engineer intuitive developer experiences,
+      agentic AI workflows, and resilient front-end architecture that allows engineering
+      organizations to move fast without breaking.
     </p>
   </section>
 
@@ -65,11 +79,34 @@ const schemaData = {
         subtitle="Dec 2024 — Present | Rev — Peabody, MA"
       >
         <ul class="list-disc ml-4 space-y-1">
-          <li><strong>Discipline Founding:</strong> Built and scaled the Design Engineering discipline from an individual contributor role to an organization-wide standard, expanding a Radix/Tailwind component system to 62+ production components.</li>
-          <li><strong>AI Systems Architecture &amp; Governance:</strong> Designed and shipped an 1,800-line codified governance layer for AI agents. Conducted empirical research (n=82) proving active, hook-based enforcement outperforms traditional static documentation by 100% in agentic workflows.</li>
-          <li><strong>Automated Migration Tooling:</strong> Built 12 custom CLI tools and an automated migration bot with 5-factor confidence scoring to safely transition 962+ files across 44 asset bundles.</li>
-          <li><strong>Performance Optimization:</strong> Overhauled Transcript Editor rendering architecture, cutting render times by 94% (Interaction to Next Paint / INP reduced from 3,297ms to 112ms) and reducing execution scripting by 57%.</li>
-          <li><strong>Cross-Functional Enablement:</strong> Created the "Claude Design Production" pipeline, empowering Product Managers and Designers to "vibe code" and ship production-ready prototypes directly to feature branches.</li>
+          <li>
+            <strong>Discipline Founding:</strong> Built and scaled the Design Engineering
+            discipline from an individual contributor role to an organization-wide
+            standard, expanding a Radix/Tailwind component system to 62+ production
+            components.
+          </li>
+          <li>
+            <strong>AI Systems Architecture &amp; Governance:</strong> Designed and
+            shipped an 1,800-line codified governance layer for AI agents. Conducted
+            empirical research (n=82) proving active, hook-based enforcement outperforms
+            traditional static documentation by 100% in agentic workflows.
+          </li>
+          <li>
+            <strong>Automated Migration Tooling:</strong> Built 12 custom CLI tools
+            and an automated migration bot with 5-factor confidence scoring to safely
+            transition 962+ files across 44 asset bundles.
+          </li>
+          <li>
+            <strong>Performance Optimization:</strong> Overhauled Transcript Editor
+            rendering architecture, cutting render times by 94% (Interaction to Next
+            Paint / INP reduced from 3,297ms to 112ms) and reducing execution scripting
+            by 57%.
+          </li>
+          <li>
+            <strong>Cross-Functional Enablement:</strong> Created the "Claude Design
+            Production" pipeline, empowering Product Managers and Designers to "vibe
+            code" and ship production-ready prototypes directly to feature branches.
+          </li>
         </ul>
       </TimeLineElement>
     </div>
@@ -81,10 +118,26 @@ const schemaData = {
         subtitle="Jun 2020 — Sep 2024 | Cervello — Boston, MA"
       >
         <ul class="list-disc ml-4 space-y-1">
-          <li><strong>Technical Leadership:</strong> Led a cross-functional team of 6 front-end and full-stack engineers, driving feature delivery, code quality, performance standards, and developer mentorship.</li>
-          <li><strong>Dynamic Web Architecture:</strong> Architected an automated dynamic landing page generator leveraging Algolia, Cloudinary, GitLab, and custom Next.js API routes.</li>
-          <li><strong>API &amp; System Design:</strong> Engineered reusable form engines integrating HubSpot and FormStack APIs, alongside a site-wide user favoriting system.</li>
-          <li><strong>Core Infrastructure &amp; SEO:</strong> Managed critical WordPress core updates, established technical system documentation, and led site-wide SEO/metadata overhauls using Algolia Search.</li>
+          <li>
+            <strong>Technical Leadership:</strong> Led a cross-functional team of
+            6 front-end and full-stack engineers, driving feature delivery, code quality,
+            performance standards, and developer mentorship.
+          </li>
+          <li>
+            <strong>Dynamic Web Architecture:</strong> Architected an automated dynamic
+            landing page generator leveraging Algolia, Cloudinary, GitLab, and custom
+            Next.js API routes.
+          </li>
+          <li>
+            <strong>API &amp; System Design:</strong> Engineered reusable form engines
+            integrating HubSpot and FormStack APIs, alongside a site-wide user favoriting
+            system.
+          </li>
+          <li>
+            <strong>Core Infrastructure &amp; SEO:</strong> Managed critical WordPress
+            core updates, established technical system documentation, and led site-wide
+            SEO/metadata overhauls using Algolia Search.
+          </li>
         </ul>
       </TimeLineElement>
     </div>
@@ -96,10 +149,22 @@ const schemaData = {
         subtitle="Feb 2018 — Jun 2020 | Collette"
       >
         <ul class="list-disc ml-4 space-y-1">
-          <li>Developed content models, templates, and renderings across Sitecore-based web properties and partner sites.</li>
-          <li>Engineered modern responsive styling, search filtering, date picker controls, and blog architecture for Explorations.com.</li>
-          <li>Architected full-stack tour itinerary PDF generation, download, and email sharing features.</li>
-          <li>Built a custom React and Redux interface for an internal CMS managing tour metadata, video assets, and media libraries.</li>
+          <li>
+            Developed content models, templates, and renderings across
+            Sitecore-based web properties and partner sites.
+          </li>
+          <li>
+            Engineered modern responsive styling, search filtering, date picker
+            controls, and blog architecture for Explorations.com.
+          </li>
+          <li>
+            Architected full-stack tour itinerary PDF generation, download, and
+            email sharing features.
+          </li>
+          <li>
+            Built a custom React and Redux interface for an internal CMS
+            managing tour metadata, video assets, and media libraries.
+          </li>
         </ul>
       </TimeLineElement>
     </div>
@@ -110,7 +175,9 @@ const schemaData = {
         title="Web Producer"
         subtitle="Mar 2017 — Feb 2018 | Putnam Investments — Boston, MA"
       >
-        Built responsive web pages using HTML, CSS, JavaScript, and Freemarker Template Language (FTL), completing rapid site deployments under strict financial industry compliance deadlines.
+        Built responsive web pages using HTML, CSS, JavaScript, and Freemarker
+        Template Language (FTL), completing rapid site deployments under strict
+        financial industry compliance deadlines.
       </TimeLineElement>
     </div>
 
@@ -120,7 +187,9 @@ const schemaData = {
         title="Development Team Intern"
         subtitle="Apr 2016 — Mar 2017 | BioSampleZone — Greater Boston Area"
       >
-        Developed an API traffic simulation test fixture for clinical sample import interfaces and conducted UX research for biological sample e-commerce platforms.
+        Developed an API traffic simulation test fixture for clinical sample
+        import interfaces and conducted UX research for biological sample
+        e-commerce platforms.
       </TimeLineElement>
     </div>
   </div>
@@ -149,11 +218,6 @@ const schemaData = {
   </section>
 
   <ul class="list-disc md:columns-5 columns-2 mx-6">
-    {
-      SKILLS_DATA.map((skill) => (
-        <li>{skill.name}</li>
-      ))
-    }
+    {SKILLS_DATA.map((skill) => <li>{skill.name}</li>)}
   </ul>
-
 </BaseLayout>
