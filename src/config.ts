@@ -185,7 +185,11 @@ export const PERSONAL_PROJECTS: Project[] = [
   },
 ];
 
-export const SKILLS_DATA = [
+export interface Skill {
+  name: string;
+}
+
+export const SKILLS_DATA: Skill[] = [
   { name: "AI Governance (LLM Engineering)" },
   { name: "Performance Engineering" },
   { name: "Design Systems & Architecture" },
