@@ -17,7 +17,7 @@ const {
 
 // Canonical URL & Absolute Image Path
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const socialImageURL = new URL(image, Astro.url);
+const socialImageURL = new URL(image, Astro.site);
 ---
 
 <!-- Global Metadata -->
@@ -52,14 +52,14 @@ const socialImageURL = new URL(image, Astro.url);
 
 <!-- Open Graph / Facebook / LinkedIn -->
 <meta property="og:type" content={ogType} />
-<meta property="og:url" content={Astro.url} />
+<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={socialImageURL} />
 
 <!-- Twitter / X -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={socialImageURL} />

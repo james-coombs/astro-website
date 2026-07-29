@@ -84,6 +84,7 @@ const articleSchema = {
               {headings.map((heading) => (
                 <a
                   href={`#${heading.slug}`}
+                  aria-label={`#${heading.slug}`}
                   class:list={[
                     "block transition-colors hover:text-primary leading-snug text-xs rounded-md py-1 px-1.5 hover:bg-base-300/40",
                     heading.depth === 3

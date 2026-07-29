@@ -12,5 +12,3 @@ User-agent: ClaudeBot
 Allow: /
 
 Sitemap: https://james-coombs.com/sitemap-index.xml
-RSS: https://james-coombs.com/rss.xml
-LLMstxt: https://james-coombs.com/llms.txt

@@ -77,6 +77,7 @@ const { tag } = Astro.params;
       page.url.prev ? (
         <a
           href={page.url.prev}
+          aria-label={page.url.prev}
           class="btn btn-ghost mx-2 flex items-center gap-2"
         >
           <svg
@@ -96,6 +97,7 @@ const { tag } = Astro.params;
       page.url.next ? (
         <a
           href={page.url.next}
+          aria-label={page.url.next}
           class="btn btn-ghost mx-2 flex items-center gap-2"
         >
           <span>Older posts</span>
