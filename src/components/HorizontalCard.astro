@@ -7,7 +7,7 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 <div
   class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
 >
-  <a href={url} aria-label={url} target={target}>
+  <a href={url} aria-label={`Navigate to ${url}`} target={target}>
     <div class="hero-content flex-col md:flex-row">
       {
         img && (
@@ -24,7 +24,7 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
       <div class="grow w-full">
         <h1 class="text-xl font-bold">
           {title}
-          {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
+          {badge && <div class="badge badge-secondary mx-2 p-3">{badge}</div>}
         </h1>
         <p class="py-1 text-1xl">{desc}</p>
         <div class="card-actions justify-end">
@@ -33,8 +33,8 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
               tags.map((tag: string) => (
                 <a
                   href={`${tag_url}/${tag}`}
-                  aria-label={`${tag_url}/${tag}`}
-                  class="badge badge-outline"
+                  aria-label={`Navigate to ${tag_url}/${tag}`}
+                  class="badge badge-outline p-3"
                 >
                   {tag}
                 </a>

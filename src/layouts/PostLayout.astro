@@ -57,8 +57,8 @@ const displayUpdatedDate = updatedDate ? dayjs(updatedDate).format("ll") : null;
           tags.map((tag: string) => (
             <a
               href={`/blog/tag/${tag}`}
-              aria-label={`/blog/tag/${tag}`}
-              class="badge badge-outline no-underline hover:badge-primary"
+              aria-label={`Navigate to /blog/tag/${tag}`}
+              class="badge badge-outline p-3 no-underline hover:bg-primary hover:text-primary-content transition-colors"
             >
               {tag}
             </a>

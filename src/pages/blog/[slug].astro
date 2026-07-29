@@ -80,16 +80,16 @@ const articleSchema = {
             <h2 class="font-bold mb-3 text-xs uppercase tracking-wider text-base-content/60 text-center border-b border-base-300/50 pb-2 pt-1 mt-0">
               On This Page
             </h2>
-            <nav class="space-y-1.5">
+            <nav aria-label="Table of contents" class="space-y-1">
               {headings.map((heading) => (
                 <a
                   href={`#${heading.slug}`}
-                  aria-label={`#${heading.slug}`}
+                  aria-label={`Jump to section: ${heading.text}`}
                   class:list={[
-                    "block transition-colors hover:text-primary leading-snug text-xs rounded-md py-1 px-1.5 hover:bg-base-300/40",
+                    "block transition-colors hover:text-primary leading-snug rounded-md py-1.5 px-2 hover:bg-base-200/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
                     heading.depth === 3
-                      ? "pl-4 text-base-content/70 text-[11px]"
-                      : "font-medium text-base-content/90",
+                      ? "ml-3 text-xs text-base-content/85"
+                      : "text-xs font-medium text-base-content/95",
                   ]}
                 >
                   {heading.text}

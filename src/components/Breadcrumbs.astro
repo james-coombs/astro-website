@@ -37,25 +37,31 @@ const breadcrumbSchema = {
   set:html={JSON.stringify(breadcrumbSchema)}
 />
 
-<nav aria-label="Breadcrumb" class="text-xs text-base-content/70 mb-4">
-  <ol class="flex items-center gap-1.5 flex-wrap">
-    <li>
-      <a href="/" class="hover:text-primary transition-colors">Home</a>
+<nav aria-label="Breadcrumbs" class="text-xs text-base-content/70 mb-4">
+  <ol class="flex items-center gap-0.5 flex-wrap list-none p-0">
+    <li class="flex items-center p-0">
+      <a
+        href="/"
+        aria-label="Navigate to Home"
+        class="hover:text-primary hover:bg-base-200/60 transition-colors py-1 px-1.5 -ml-1.5 rounded inline-flex items-center"
+      >
+        Home
+      </a>
     </li>
     {
       items.map((item) => (
-        <li class="flex items-center gap-1.5">
-          <span class="text-base-content/40">/</span>
+        <li class="flex items-center gap-0.5">
+          <span class="text-base-content/40 select-none px-0.5">/</span>
           {item.href ? (
             <a
               href={item.href}
-              aria-label={item.label}
-              class="hover:text-primary transition-colors"
+              aria-label={`Navigate to ${item.label}`}
+              class="hover:text-primary hover:bg-base-200/60 transition-colors py-1 px-1.5 rounded inline-flex items-center"
             >
               {item.label}
             </a>
           ) : (
-            <span class="text-base-content/75 font-normal line-clamp-1 max-w-[200px]">
+            <span class="text-base-content/75 font-normal line-clamp-1 max-w-[200px] py-1 px-1.5">
               {item.label}
             </span>
           )}
