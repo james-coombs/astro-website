@@ -12,8 +12,6 @@ export const SITE_AUTHOR = "James Coombs";
 
 export const GENERATE_SLUG_FROM_TITLE = true;
 
-export const TRANSITION_API = true;
-
 export const SOCIAL_LINKS = {
   github: "https://github.com/james-coombs",
   linkedin: "https://www.linkedin.com/in/james-coombs",
