@@ -2,6 +2,7 @@
 import SideBarFooter from "./SideBarFooter.astro";
 import { Image } from "astro:assets";
 import SideBarMenu from "./SideBarMenu.astro";
+import profileImage from "/src/assets/profile.webp";
 const { sideBarActiveItemID } = Astro.props;
 ---
 
@@ -21,7 +22,7 @@ const { sideBarActiveItemID } = Astro.props;
               format="webp"
               width={300}
               height={300}
-              src="/src/assets/profile.webp"
+              src={profileImage}
               alt="Profile image"
             />
           </div>
