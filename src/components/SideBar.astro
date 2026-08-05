@@ -1,6 +1,6 @@
 ---
 import SideBarFooter from "./SideBarFooter.astro";
-// import { Image } from "astro:assets";
+import { Image } from "astro:assets";
 import SideBarMenu from "./SideBarMenu.astro";
 const { sideBarActiveItemID } = Astro.props;
 ---
@@ -16,7 +16,14 @@ const { sideBarActiveItemID } = Astro.props;
           class="avatar transition ease-in-out hover:scale-[102%] block m-auto"
         >
           <div class="w-[8.5rem]">
-            <!-- @TODO: Add/use headshot as profile.webp <Image class="mask mask-circle" format="webp" width={300} height={300} src="/profile.webp" alt="Profile image" /> -->
+            <Image
+              class="mask mask-circle"
+              format="webp"
+              width={300}
+              height={300}
+              src="/src/assets/profile.webp"
+              alt="Profile image"
+            />
           </div>
         </div>
       </a>
