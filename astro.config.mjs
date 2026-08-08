@@ -5,6 +5,7 @@ import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
   site: "https://james-coombs.com/",
+  trailingSlash: "always",
   build: {
     inlineStylesheets: "always",
   },
