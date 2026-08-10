@@ -2,7 +2,7 @@ import rss from "@astrojs/rss";
 import type { APIContext } from "astro";
 import { getCollection } from "astro:content";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
-import createSlug from "../lib/createSlug";
+import formatBlogLink from "../lib/formatBlogLink";
 
 export async function GET(context: APIContext) {
   const posts = await getCollection("blog");
@@ -18,7 +18,7 @@ export async function GET(context: APIContext) {
       title: post.data.title,
       pubDate: post.data.pubDate,
       description: post.data.description,
-      link: `/blog/${createSlug(post.data.slug, post.id)}/`,
+      link: formatBlogLink(post.data.slug, post.id),
     })),
   });
 }

@@ -1,13 +1,29 @@
 ---
-const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
 import { Image } from "astro:assets";
-const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
+import sanitizeDeepLink from "../lib/sanitizeDeepLink";
+const {
+  title,
+  img,
+  desc,
+  url,
+  badge,
+  tags,
+  noTagLinks,
+  target = "_blank",
+} = Astro.props;
+const cleanUrl = url.replace(/\/$/, "");
+const tag_url = `${cleanUrl.split("/").slice(0, -1).join("/")}/tag`;
+const horizontal_card_link = sanitizeDeepLink(url);
 ---
 
 <div
   class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
 >
-  <a href={url} aria-label={`Navigate to ${url}`} target={target}>
+  <a
+    href={horizontal_card_link}
+    aria-label={`Navigate to ${horizontal_card_link}`}
+    target={target}
+  >
     <div class="hero-content flex-col md:flex-row">
       {
         img && (
@@ -30,15 +46,19 @@ const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
         <div class="card-actions justify-end">
           {
             tags &&
-              tags.map((tag: string) => (
-                <a
-                  href={`${tag_url}/${tag}`}
-                  aria-label={`Navigate to ${tag_url}/${tag}`}
-                  class="badge badge-outline p-3"
-                >
-                  {tag}
-                </a>
-              ))
+              tags.map((tag: string) =>
+                noTagLinks ? (
+                  <span class="badge badge-outline p-3">{tag}</span>
+                ) : (
+                  <a
+                    href={`${tag_url}/${tag}/`}
+                    aria-label={`Navigate to ${tag_url}/${tag}/`}
+                    class="badge badge-outline p-3"
+                  >
+                    {tag}
+                  </a>
+                ),
+              )
           }
         </div>
       </div>

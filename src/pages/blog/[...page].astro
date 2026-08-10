@@ -3,7 +3,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import HorizontalCard from "../../components/HorizontalCard.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import type { PaginateFunction, Page } from "astro";
-import createSlug from "../../lib/createSlug";
+import formatBlogLink from "../../lib/formatBlogLink";
 
 export async function getStaticPaths({
   paginate,
@@ -71,7 +71,7 @@ const schemaData = {
               title={post.data.title}
               img={post.data.heroImage}
               desc={post.data.description}
-              url={"/blog/" + createSlug(post.data.slug, post.id)}
+              url={formatBlogLink(post.data.slug, post.id)}
               target="_self"
               badge={post.data.badge}
               tags={post.data.tags}
@@ -88,8 +88,8 @@ const schemaData = {
     {
       page.url.prev ? (
         <a
-          href={page.url.prev}
-          aria-label={`Navigate to ${page.url.prev}`}
+          href={`${page.url.prev}/`}
+          aria-label={`Navigate to ${page.url.prev}/`}
           class="btn btn-ghost mx-2 flex items-center gap-2"
         >
           <svg
@@ -108,8 +108,8 @@ const schemaData = {
     {
       page.url.next ? (
         <a
-          href={page.url.next}
-          aria-label={`Navigate to ${page.url.next}`}
+          href={`${page.url.next}/`}
+          aria-label={`Navigate to ${page.url.next}/`}
           class="btn btn-ghost mx-2 flex items-center gap-2"
         >
           <span>Older posts</span>

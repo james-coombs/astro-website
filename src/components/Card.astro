@@ -1,10 +1,12 @@
 ---
-const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
 import { Image } from "astro:assets";
+import sanitizeDeepLink from "../lib/sanitizeDeepLink";
+const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
+const card_link = sanitizeDeepLink(url);
 ---
 
 <div class="md:w-1/3 w-full">
-  <a href={url} aria-label={`Navigate to ${url}`} target={target}>
+  <a href={card_link} aria-label={`Navigate to ${card_link}`} target={target}>
     <div
       class="card bg-base-100 transition ease-in-out hover:shadow-xl mx-6 my-2 hover:scale-[102%]"
     >
