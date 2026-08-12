@@ -7,8 +7,6 @@ tags: ["javascript", "svg", "animation", "webdev"]
 slug: "svg-shape-morph-animation"
 ---
 
-# Why Animating an SVG the Obvious Way Breaks It
-
 _James Coombs is a design engineer who maintains the icon and illustration system for a product design system. He spent a week getting one illustration to animate between two states the way the designer's Figma prototype did, and most of that week went to discovering how the obvious approach fails._
 
 The obvious approach: you have two SVGs, the same illustration in two poses, and you want to animate from one to the other. An SVG is a list of paths, and each path is a string of letter commands (move, line, curve) followed by the numbers that position them. So to animate, you interpolate the numbers: at the halfway point, every coordinate sits halfway between its start and end value. Ninety percent of the illustration animates perfectly this way. The other ten percent comes apart in mid-air.
