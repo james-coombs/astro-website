@@ -99,7 +99,7 @@ If your governance file contains "always use X" or "never do Y," those rules ach
 
 **Rules that don't work:** "ALWAYS use the design system." "NEVER import MUI components." "Use semantic tokens instead of hex values." The agent uses whatever's in scope and rationalizes compliance.
 
-For every rule in your governance file, ask: what happens if the agent ignores this? If nothing happens, the rule doesn't work. Remove it or build enforcement. One enforcement hook prevents more defects than a hundred lines of documentation. (I built a full enforcement architecture around this finding; see "I Gave an AI Agent Unrestricted Shell Access.")
+For every rule in your governance file, ask: what happens if the agent ignores this? If nothing happens, the rule doesn't work. Remove it or build enforcement. One enforcement hook prevents more defects than a hundred lines of documentation. (I built a full enforcement architecture around this finding; see "I Gave an AI Agent Unrestricted Shell Access. _coming soon_]")
 
 ---
 
