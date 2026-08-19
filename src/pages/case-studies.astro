@@ -1,0 +1,76 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+import { CASE_STUDIES } from "../config";
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "James Coombs — Case Studies & Shipped Work",
+  description:
+    "Production architectures, AI governance frameworks, migration engines, and early development projects by James Coombs.",
+  itemListElement: CASE_STUDIES.map((caseStudy, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "CreativeWork",
+      name: caseStudy.title,
+      description: caseStudy.outcome,
+      url: caseStudy.url,
+      author: {
+        "@type": "Person",
+        name: "James Coombs",
+      },
+    },
+  })),
+};
+---
+
+<BaseLayout
+  title="Case Studies | James Coombs"
+  sideBarActiveItemID="case-studies"
+>
+  <!-- JSON-LD Structured Data -->
+  <script
+    is:inline
+    type="application/ld+json"
+    set:html={JSON.stringify(schemaData)}
+  />
+
+  <header class="mb-8">
+    <h1 class="text-3xl w-full font-bold">Case Studies &amp; Shipped Work</h1>
+    <p class="text-base-content/80 mt-2 text-lg">
+      A collection of production architectures, performance overhauls, system
+      migrations, and AI governance tools.
+    </p>
+  </header>
+
+  <!-- Section 1: Key Architectural Wins -->
+  <section class="mb-12">
+    <div class="mb-6 pb-2 border-b border-base-300">
+      <h2 class="text-2xl font-bold text-primary">Key Architectural Wins</h2>
+      <p class="text-sm text-base-content/70 mt-1">
+        High-impact product and infrastructure deliverables.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {
+        CASE_STUDIES.map((study) => (
+          <>
+            <HorizontalCard
+              title={study.title}
+              problem={study.problem}
+              architecture={study.architecture}
+              outcome={study.outcome}
+              url={study.url}
+              target="_self"
+              badge="Case Study"
+            />
+            <div class="divider my-0" />
+          </>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

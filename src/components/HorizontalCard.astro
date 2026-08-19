@@ -1,16 +1,21 @@
 ---
 import { Image } from "astro:assets";
 import sanitizeDeepLink from "../lib/sanitizeDeepLink";
+
 const {
   title,
   img,
   desc,
+  problem,
+  architecture,
+  outcome,
   url,
   badge,
   tags,
   noTagLinks,
   target = "_blank",
 } = Astro.props;
+
 const cleanUrl = url.replace(/\/$/, "");
 const tag_url = `${cleanUrl.split("/").slice(0, -1).join("/")}/tag`;
 const horizontal_card_link = sanitizeDeepLink(url);
@@ -42,7 +47,41 @@ const horizontal_card_link = sanitizeDeepLink(url);
           {title}
           {badge && <div class="badge badge-secondary mx-2 p-3">{badge}</div>}
         </h1>
-        <p class="py-1 text-1xl">{desc}</p>
+
+        <!-- Structured Details -->
+        {
+          problem || architecture || outcome ? (
+            <div class="py-2 text-sm space-y-1 text-base-content/90">
+              {problem && (
+                <div>
+                  <strong class="font-semibold text-base-content">
+                    Problem:
+                  </strong>{" "}
+                  {problem}
+                </div>
+              )}
+              {architecture && (
+                <div>
+                  <strong class="font-semibold text-base-content">
+                    Architecture:
+                  </strong>{" "}
+                  {architecture}
+                </div>
+              )}
+              {outcome && (
+                <div>
+                  <strong class="font-semibold text-base-content">
+                    Outcome:
+                  </strong>{" "}
+                  {outcome}
+                </div>
+              )}
+            </div>
+          ) : (
+            desc && <p class="py-1 text-1xl">{desc}</p>
+          )
+        }
+
         <div class="card-actions justify-end">
           {
             tags &&

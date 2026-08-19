@@ -216,3 +216,48 @@ export const SKILLS_DATA: Skill[] = [
   { name: "REST APIs & Microservices" },
   { name: "SEO & Web Metadata" },
 ];
+
+export interface CASE_STUDY {
+  id: string;
+  title: string;
+  problem: string;
+  architecture: string;
+  outcome: string;
+  url: string;
+}
+
+export const CASE_STUDIES: CASE_STUDY[] = [
+  {
+    id: "seo-landing-page-engine",
+    title: "SEO Landing Page Engine",
+    problem:
+      "Marketing needed to launch high-converting, SEO-optimized landing pages instantly, but engineering was a bottleneck.",
+    architecture:
+      "Built a dynamic landing page generation engine leveraging Next.js API routes, Algolia, Cloudinary, and GitLab CI/CD.",
+    outcome:
+      "Empowered the business to deploy data-driven shopping experiences at scale without manual engineering intervention.",
+    url: "/resume#cervello",
+  },
+  {
+    id: "signup-performance-overhaul",
+    title: "Signup Performance Overhaul (LCP 9.8s to 3.3s)",
+    problem:
+      "Interaction lag and slow page loads were hurting conversion on critical web funnels.",
+    architecture:
+      "Split the signup webpack bundle, removed blocking dependencies, and established a frozen performance baseline.",
+    outcome:
+      "Cut interaction lag (INP) by 94% and dropped signup LCP by 66%, exceeding the business goal. Built RUM regression alerting to ensure the fix stayed fixed.",
+    url: "/resume#rev",
+  },
+  {
+    id: "design-system-and-migration-engine",
+    title: "Design System and Migration Engine",
+    problem:
+      "Moving 962 files across 44 bundles from Material UI to a custom Radix/Tailwind system without breaking production.",
+    architecture:
+      "Built a suite of 12 custom CLI tools to automate the codebase transition, alongside a 60-component design system.",
+    outcome:
+      'Shipped the migration with 100% accuracy, creating a "Design to Production" pipeline that let PMs prototype directly into feature branches.',
+    url: "/resume#rev",
+  },
+];

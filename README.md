@@ -66,6 +66,7 @@ This site hosts writing, projects, and research on:
 │   └── pages/                    # File-based routing
 │       ├── index.astro           # Main landing page & bio
 │       ├── projects.astro        # Featured engineering projects
+│       ├── case-studies.astro    # Featured engineering case studies
 │       ├── resume.astro          # Career history & skills timeline
 │       ├── blog/
 │       │   ├── [...page].astro   # Paginated blog index
