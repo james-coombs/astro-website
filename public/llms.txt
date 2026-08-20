@@ -1,6 +1,6 @@
 # James Coombs
 
-> Staff Product Engineer | Bridging architecture, UX, and developer tooling to build high-performance web experiences at scale.
+> Product Engineer | Bridging architecture, UX, and developer tooling to build high-performance web experiences at scale.
 
 ## Context & Core Technical Focus
 - **Product & Growth Engineering**: Architecting fast, data-driven web experiences that optimize conversion, SEO, and user engagement.
@@ -10,12 +10,12 @@
 
 ## Key Case Studies
 - [SEO Landing Page Engine](https://james-coombs.com/case-studies): Built a dynamic landing page generation engine leveraging Next.js API routes, Algolia, Cloudinary, and GitLab CI/CD, empowering the business to deploy data-driven shopping experiences at scale without manual engineering intervention.
-- [Signup Performance Overhaul](https://james-coombs.com/case-studies): Split the signup webpack bundle, removed blocking dependencies, and established a frozen performance baseline. Cut interaction lag (INP) by 94% and dropped signup LCP by 66%.
-- [Design System and Migration Engine](https://james-coombs.com/case-studies): Built a suite of 12 custom CLI tools to automate the codebase transition of 962 files, alongside a 60-component design system, shipping with 100% accuracy.
+- [Signup Performance Overhaul](https://james-coombs.com/case-studies): Split the signup webpack bundle, removed blocking dependencies, and established a frozen performance baseline. Drove signup LCP from 9.8s to 3.3s (-66%).
+- [Design System and Migration Engine](https://james-coombs.com/case-studies): Built a suite of 12 custom CLI tools to automate the codebase transition of 962 files, alongside a 60-component design system. Managed live coexistence (880 files on old framework, 355 on the new design system, across 6 packages).
 
 ## Other Infrastructure & Tooling
 - [Agentic AI Governance Layer](https://james-coombs.com/blog/ai-agent-safety-architecture/): Codified safety system for AI agents enforcing runtime hooks and repository standards.
-- [High-Performance Transcript Rendering Engine](https://james-coombs.com/resume#rev): Architectural overhaul reducing render times by 94% and INP from 3,297ms to 112ms.
+- [High-Performance Transcript Rendering Engine](https://james-coombs.com/resume#rev): Architectural overhaul to performance engineering resulting in the deployment of RUM regression alerting across the highest-traffic pages.
 
 ## Primary Pages
 - [Home Page](https://james-coombs.com/): Engineering discipline overview and impact highlights.
