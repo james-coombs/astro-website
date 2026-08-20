@@ -7,7 +7,7 @@ tags: ["webdev", "refactoring", "architecture", "automation"]
 slug: "scoring-gating-ratcheting-migration-engine"
 ---
 
-_James Coombs is a design engineer who built a migration engine for a 962-file Material UI to custom design system migration. 7,065 lines of bot code, 5-factor confidence scoring, and a state machine with gated transitions._
+_James Coombs is a design engineer who built a migration engine for a 962-file Material UI to custom design system migration. 7,065 lines of TypeScript, more than half of it tests, 5-factor confidence scoring, and a state machine with gated transitions._
 
 Once the CSS coexistence layer was in place (I covered that in "The CSS Problem Nobody Thinks Is Solvable"), both frameworks could run side-by-side. The next question: how do you actually migrate 962 files across 12 packages without drowning in manual work or shipping regressions?
 
@@ -67,7 +67,7 @@ Each transition has a named gate:
 
 Files can move backward. Any active state can transition to `failed` with notes on what broke. The `checked` state can return to `not_started` via a `file-changed-staleness` gate (the source file was modified since it was last checked, invalidating the analysis). Stale states have configurable timeouts: 1 hour for `migrating`, 2 weeks for `awaiting_human_review`, 30 days for `pr_created`.
 
-Why this matters: without gated transitions, teams mark files as "done" when the PR merges. But "PR merged" and "verified in production with no regressions" are different things. 15 states and 12 gates make that gap explicit and enforceable.
+Why this matters: without gated transitions, teams mark files as "done" when the PR merges. But "PR merged" and "verified in production with no regressions" are different things. 15 states and 15 named gates make that gap explicit and enforceable, 12 of them on the forward path and 3 on the routes back (a file changed since it was checked, a failed file whose changes were reverted, an explicit override of a `wont_migrate` decision). The remaining 11 transitions are ungated, and they are all the ones that need no evidence to take: anything to `failed`, and the hand-off to human review.
 
 ---
 
@@ -94,7 +94,7 @@ The mappings are JSON, not code. Adding a new component mapping is a data change
 
 The ratchet pattern (monotonically decreasing violation counts, enforced through CI) is well-established. Dusty Burwell described it in 2019. What's less common is applying it at the write layer for design system imports.
 
-PreToolUse hooks (66 lines, 17 tests) fire on every file write. If an edit introduces an import from the legacy framework in a file that's been marked "complete," the edit is rejected before it lands. Not at CI. Not at PR review. At the moment the engineer types the import. The engineer sees an error message explaining why and pointing to the design system equivalent.
+PreToolUse hooks (65 lines, 17 tests) fire on every file write. If an edit introduces an import from the legacy framework in a file that's been marked "complete," the edit is rejected before it lands. Not at CI. Not at PR review. At the moment the engineer types the import. The engineer sees an error message explaining why and pointing to the design system equivalent.
 
 This is not documentation ("please use the new components"). This is enforcement at the earliest possible point. The count of legacy imports only goes down, never up.
 
@@ -106,13 +106,14 @@ Result: zero legacy imports in any file marked "complete." Zero review comments 
 
 ## The learning log
 
-11 entries over 3 months. Each entry: date, source, what happened, what rule it produced.
+10 entries over four months. Each entry: date, source, what happened, what rule it produced.
 
 Examples:
 
 - A static hex color (`#6464f0`) wasn't converted to a design token during migration. Added a check to the migration step that flags unconverted hex values.
 - A migration check was too broad: it added design system config to bundles that didn't use any migrated components. Refined the check to verify component usage before applying config.
-- A Drawer component's portal rendered outside the scope wrapper, breaking ref-forwarding. Added a rule for portal scoping and updated the component's test suite.
+- A portal-rendered component's test asserted a class on a node that could be null, so the assertion passed vacuously. Added a not-null guard as a rule and updated the test suite.
+- Separately, nesting a Radix trigger through a component that did not forward refs silently dropped the ref. Added a rule; the failure is silent, which is why it needed one.
 
 The log is append-only with mandatory fields. Rules flow from failures, not from predictions. Starting the log on day 1 would have been better; the first three months of failures had to be reconstructed from git history.
 
@@ -120,7 +121,7 @@ The log is append-only with mandatory fields. Rules flow from failures, not from
 
 ## What didn't work
 
-**Hardcoded confidence weights.** The initial weights were guesses. Size was weighted too high (30%), semantic complexity too low (15%). After 20 real migrations, the data showed which factors actually predicted success. Recalibrating the weights changed the priority order for ~40% of the remaining files. Start with any weights; recalibrate from real data after the first batch.
+**Hardcoded confidence weights, never recalibrated.** The five weights were set by judgment before the first file was scored, and they are still the numbers in the config: 20, 25, 25, 15, 15. Nothing in the system closes the loop. The bot records the score it predicted and the state each file actually reached, so the data to test the weights is produced as a side effect of running it, and no one has ever gone back and fitted one against the other. A scoring system that cannot be shown to predict anything is a prioritization heuristic wearing the vocabulary of a model. It still beats migrating files in directory order, which is the honest claim, and it is a smaller claim than the machinery implies. Build the recalibration step into the first batch, or the weights stay guesses with a decimal point.
 
 **Generic checks without scoping.** A check that asks "does this package depend on the design system?" catches packages that imported one design system utility for an unrelated reason. Three bundles got unnecessary config added before the check was refined to verify actual component usage. Automation checks need nested conditions, not just existence tests.
 
@@ -128,15 +129,15 @@ The log is append-only with mandatory fields. Rules flow from failures, not from
 
 ## The numbers
 
-| Metric                | Value                                         |
-| --------------------- | --------------------------------------------- |
-| Migration bot code    | 7,065 lines + 2,363 lines of tests            |
-| Component mappings    | 12 files, 100+ prop-level transforms          |
-| Structured data files | 48 (~6,900 lines of JSON)                     |
-| Scoring factors       | 5 (size, semantic, mapping, test, navigation) |
-| State machine         | 15 statuses, 12 named gates, JSON-stored      |
-| Enforcement hooks     | 66 lines, 17 tests                            |
-| Learning log entries  | 11 entries, 15+ rule refinements              |
+| Metric                | Value                                                    |
+| --------------------- | -------------------------------------------------------- |
+| Migration bot code    | 7,065 lines of TypeScript, of which 3,802 are tests      |
+| Component mappings    | 12 files, 69 components, 131 prop-level transforms       |
+| Structured data files | 49 (9,471 lines of JSON)                                 |
+| Scoring factors       | 5 (size, semantic, mapping, test, navigation)            |
+| State machine         | 15 statuses, 26 transitions, 15 named gates, JSON-stored |
+| Enforcement hooks     | 65 lines, 17 tests                                       |
+| Learning log entries  | 10 entries, 11 codified rules                            |
 
 ---
 

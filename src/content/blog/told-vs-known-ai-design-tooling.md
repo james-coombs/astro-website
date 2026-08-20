@@ -53,9 +53,9 @@ And your design system changes. Components get new variants, tokens get renamed.
 
 My ablation study (n=9, controlled) confirmed this:
 
-- Agent + MCP query (Known): 27.5 / 30 on design system compliance
+- Agent + MCP query (Known): 26.7 / 30 on design system compliance
 - AI design tool interpretation (Told): 16.3 / 30
-- CLAUDE.md rules ("always use the design system"): 16.1 / 30, identical to no guidance
+- CLAUDE.md rules ("always use the design system"): 16.4 / 30, identical to no guidance
 
 The MCP server took about a week to build. It gives every AI tool structured access to the real design system. The cost-per-tool amortization improves with every new tool that connects.
 
@@ -77,4 +77,4 @@ Before evaluating any AI design tool, ask one question: **does it query my real 
 
 If your team generates AI code that goes into production, invest in a structured query interface. MCP server, CLI tool, AST index: the form factor matters less than the structured access. Build it once; every AI tool benefits. The returns compound.
 
-Don't try to improve "Told" fidelity by writing better documentation or more detailed prompts. My data says more constraints actually degrade output quality (density inversion; see "Your CLAUDE.md Rules Achieve 0% Compliance" for the full methodology). A 2-sentence prompt + structured query beats a comprehensive governance file by 11 points.
+Don't try to improve "Told" fidelity by writing better documentation or more detailed prompts. My data says the returns stop, and may reverse: across three versions of a design-system manifest the middle one scored best, and the densest scored worst. Treat that as a ceiling rather than a slope, and note that the gap between versions is smaller than the variation between runs of the same version. A 2-sentence prompt + structured query beats a comprehensive governance file by 11 points.
