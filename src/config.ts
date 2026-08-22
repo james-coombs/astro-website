@@ -44,9 +44,9 @@ export const CAREER_PROJECTS: Project[] = [
       "Claude API",
     ],
     overview:
-      "An 1,800-line codified governance system for AI agents that enforces active safety hooks and coding standards across production repositories.",
+      "A 1,766-line governance system for AI agents that enforces active safety hooks and coding standards across production repositories.",
     description:
-      "Built and empirically validated (n=82) an active enforcement engine for AI coding agents. Replaced passive documentation with hook-based runtime gating, achieving 100% compliance in agentic workflows.",
+      "Built and empirically validated (82 runs) an active enforcement engine for AI coding agents. Replaced passive documentation with hook-based runtime gating, achieving 100% compliance in agentic workflows.",
     url: "/resume#rev",
     repo: "https://github.com/james-coombs",
     badge: "AI Governance",
