@@ -29,7 +29,7 @@ Three layers, evaluated in sequence on every tool call:
 
 **Layer 2: PreToolUse hooks.** Six Python-in-Bash scripts that fire on every Bash, Read, Write/Edit, and MCP tool call. Regex matching catches the variants that globs miss: `git -C /path commit`, `cd /tmp && gh pr create`, `curl -X POST`. Also gates 52 MCP write tools (Slack, Jira, Figma, Linear) behind time-limited approval tokens, across 6 service prefixes.
 
-**Layer 3: CLAUDE.md instructions.** Behavioral guidance for edge cases regex can't express. Weakest layer. Subagents don't read it, and my own ablation study showed 0% compliance for design system behavioral rules in CLAUDE.md (I covered this in detail in [Your CLAUDE.md Rules Achieve 0% Compliance](URL_BASE/claude-md-rules-dont-work)). For security-specific rules, the enforcement layers above handle what documentation can't.
+**Layer 3: CLAUDE.md instructions.** Behavioral guidance for edge cases regex can't express. Weakest layer. Subagents don't read it, and my own ablation study showed 0% compliance for design system behavioral rules in CLAUDE.md (I covered this in detail in [Your CLAUDE.md Rules Achieve 0% Compliance](/blog/why-your-claude-md-rules-dont-work/)). For security-specific rules, the enforcement layers above handle what documentation can't.
 
 Why two enforcement layers? `Bash(git commit*)` doesn't catch `git -C /repo commit`. `\bgit\b.*\s+commit\b` does. For git/gh, both layers run. For everything else (ssh, sudo, rm, cloud CLIs), only Layer 2 runs, because Layer 2's deny messages include the `/yes` escape hatch and Layer 1's don't.
 
