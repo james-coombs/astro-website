@@ -229,13 +229,24 @@ export interface CASE_STUDY {
 export const CASE_STUDIES: CASE_STUDY[] = [
   {
     id: "seo-landing-page-engine",
-    title: "SEO Landing Page Engine",
+    title: "Enterprise SEO Landing Page Engine",
     problem:
-      "Marketing needed to launch high-converting, SEO-optimized landing pages instantly, but engineering was a bottleneck.",
+      "Marketing needed to launch high-converting, SEO-optimized landing pages instantly, but a manual engineering process took over a month to execute.",
     architecture:
-      "Built a dynamic landing page generation engine leveraging Next.js API routes, Algolia, Cloudinary, and GitLab CI/CD.",
+      "Built a dynamic landing page generation engine leveraging Next.js API routes, Algolia, Cloudinary, and GitLab CI/CD. Built a custom Node.js CLI tool to map listing data to image assets.",
     outcome:
-      "Empowered the business to deploy data-driven shopping experiences at scale without manual engineering intervention.",
+      "Replaced the month-long bottleneck by automating the publishing of over 400 location-based landing pages, allowing marketing to deploy data-driven shopping experiences at scale.",
+    url: "/resume#cervello",
+  },
+  {
+    id: "cross-session-favorites",
+    title: "Cross-Session State Synchronization (Favorites)",
+    problem:
+      "Users needed to save properties across tabs and sessions seamlessly without being forced to create an account immediately.",
+    architecture:
+      "Engineered a complex cross-session favoriting system leveraging the BroadcastChannel API for real-time cross-tab sync, and local storage to handle the anonymous-to-authenticated state merge.",
+    outcome:
+      "Drove over 3,000 new user signups and 6,000 saved items within the first two months of launch.",
     url: "/resume#cervello",
   },
   {
@@ -251,13 +262,13 @@ export const CASE_STUDIES: CASE_STUDY[] = [
   },
   {
     id: "design-system-and-migration-engine",
-    title: "Design System and Migration Engine",
+    title: "The Spark Design System & Migration Engine",
     problem:
       "Moving 962 files across 44 bundles from Material UI to a custom Radix/Tailwind system without breaking production.",
     architecture:
       "Built a suite of 12 custom CLI tools to automate the codebase transition, alongside a 60-component design system.",
     outcome:
-      'Shipped the migration with 100% accuracy, creating a "Design to Production" pipeline that let PMs prototype directly into feature branches.',
+      'Shipped the migration and managed live coexistence (880 files on old framework, 355 on the new design system, across 6 packages), creating a "Design to Production" pipeline that let PMs prototype directly into feature branches.',
     url: "/resume#rev",
   },
 ];
