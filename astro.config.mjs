@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: "https://james-coombs.com/",
@@ -9,11 +9,8 @@ export default defineConfig({
   build: {
     inlineStylesheets: "always",
   },
-  integrations: [
-    mdx(),
-    sitemap(),
-    tailwind({
-      configFile: "./tailwind.config.mjs", // Forces Astro to load this exact config
-    }),
-  ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  integrations: [mdx(), sitemap()],
 });

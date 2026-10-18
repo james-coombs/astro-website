@@ -34,7 +34,7 @@ This site hosts writing, projects, and research on:
 | :-------------------- | :----------------------------------------------------------------------------------------------------------- |
 | **Framework**         | [Astro 7](https://astro.build) (Static Site Generation / Content Collections)                                |
 | **Language**          | [TypeScript 5.8](https://www.typescriptlang.org/) (Strict type safety)                                       |
-| **Styling**           | [Tailwind CSS v3](https://tailwindcss.com/) + [DaisyUI v4](https://daisyui.com/) + `@tailwindcss/typography` |
+| **Styling**           | [Tailwind CSS v4](https://tailwindcss.com/) + [DaisyUI v5](https://daisyui.com/) + `@tailwindcss/typography` |
 | **SEO & AEO Engine**  | JSON-LD (`schema.org`), Open Graph, XML Sitemaps, Semantic HTML for LLM & Search Indexing                    |
 | **Asset Pipeline**    | Native [Sharp](https://sharp.pixelplumbing.com/) integration for WebP image optimization                     |
 | **Quality & Linting** | ESLint 10, Prettier 3, Husky 9, `lint-staged`, `@astrojs/check`                                              |
