@@ -45,7 +45,7 @@
     "daisyui": "^5.7.50",
     "eslint": "^10.13.0",
     "eslint-plugin-astro": "^3.2.1",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-jsx-a11y-x": "^0.2.0",
     "husky": "^9.1.7",
     "linkinator": "^8.1.0",
     "lint-staged": "^17.6.0",
