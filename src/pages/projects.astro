@@ -36,7 +36,6 @@ const schemaData = {
     type="application/ld+json"
     set:html={JSON.stringify(schemaData)}
   />
-
   <header class="mb-8">
     <h1 class="text-3xl w-full font-bold">Projects &amp; Engineering Work</h1>
     <p class="text-base-content/80 mt-2 text-lg">
@@ -56,22 +55,20 @@ const schemaData = {
     </div>
 
     <div class="space-y-4">
-      {
-        CAREER_PROJECTS.map((project) => (
-          <>
-            <HorizontalCard
-              title={project.title}
-              desc={project.description}
-              url={project.url || project.repo}
-              target="_self"
-              badge={project.badge}
-              tags={project.technologies}
-              noTagLinks
-            />
-            <div class="divider my-0" />
-          </>
-        ))
-      }
+      {CAREER_PROJECTS.map((project) => (
+        <>
+          <HorizontalCard
+            title={project.title}
+            desc={project.description}
+            url={project.url || project.repo}
+            target="_self"
+            badge={project.badge}
+            tags={project.technologies}
+            noTagLinks
+          />
+          <div class="divider my-0" />
+        </>
+      ))}
     </div>
   </section>
 
@@ -88,21 +85,19 @@ const schemaData = {
     </div>
 
     <div class="space-y-4">
-      {
-        PERSONAL_PROJECTS.map((project) => (
-          <>
-            <HorizontalCard
-              title={project.title}
-              desc={project.description}
-              url={project.repo}
-              target="_self"
-              badge={project.badge}
-              tags={project.technologies}
-            />
-            <div class="divider my-0" />
-          </>
-        ))
-      }
+      {PERSONAL_PROJECTS.map((project) => (
+        <>
+          <HorizontalCard
+            title={project.title}
+            desc={project.description}
+            url={project.repo}
+            target="_self"
+            badge={project.badge}
+            tags={project.technologies}
+          />
+          <div class="divider my-0" />
+        </>
+      ))}
     </div>
   </section>
 </BaseLayout>

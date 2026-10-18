@@ -37,7 +37,6 @@ const schemaData = {
     type="application/ld+json"
     set:html={JSON.stringify(schemaData)}
   />
-
   <div class="mt-5">
     <div class="text-xl py-1">Hello!</div>
     <h1 class="text-5xl font-bold">James Coombs — Product Engineer</h1>
@@ -69,21 +68,19 @@ const schemaData = {
     <h2 class="text-3xl w-full font-bold mb-5">Latest from blog</h2>
   </div>
 
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={formatBlogLink(post.data.slug, post.id)}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
+  {last_posts.map((post) => (
+    <>
+      <HorizontalCard
+        title={post.data.title}
+        img={post.data.heroImage}
+        desc={post.data.description}
+        url={formatBlogLink(post.data.slug, post.id)}
+        target="_self"
+        badge={post.data.badge}
+      />
+      <div class="divider my-0" />
+    </>
+  ))}
 </BaseLayout>
 
 <script is:inline type="application/ld+json">

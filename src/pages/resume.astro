@@ -49,7 +49,6 @@ const schemaData = {
     type="application/ld+json"
     set:html={JSON.stringify(schemaData)}
   />
-
   <header class="mb-5">
     <h1 class="text-3xl w-full font-bold">James Coombs — Resume</h1>
     <p class="text-sm text-base-content/70 mt-1">
@@ -59,11 +58,12 @@ const schemaData = {
 
   <section class="mb-10 text-justify">
     <p>
-      <strong>James Coombs</strong> is a Product Engineer specializing in Design Systems
-      at scale, AI Governance, and high-demand web application performance. Leverages
-      a background in Psychology to engineer intuitive developer experiences, agentic
-      AI workflows, and resilient front-end architecture that allows engineering organizations
-      to move fast without breaking.
+      <strong>James Coombs</strong> is a Product Engineer specializing in Design
+      Systems at scale, AI Governance, and high-demand web application
+      performance. Leverages a background in Psychology to engineer intuitive
+      developer experiences, agentic AI workflows, and resilient front-end
+      architecture that allows engineering organizations to move fast without
+      breaking.
     </p>
   </section>
 
@@ -80,36 +80,40 @@ const schemaData = {
       >
         <ul class="list-disc ml-4 space-y-1">
           <li>
-            <strong>Technical Product Management & AI Scale:</strong> Personally completed
-            127 Jira tickets using AI agents to ship 3x more production code faster,
-            and built the tooling that helped PMs, designers, and 7 other engineers
-            accelerate their own execution. Built and scaled the Platform Engineering
-            discipline from an individual contributor role to an organization-wide
-            standard, expanding a Radix/Tailwind component system to 60 production
+            <strong>Technical Product Management & AI Scale:</strong> Personally
+            completed 127 Jira tickets using AI agents to ship 3x more
+            production code faster, and built the tooling that helped PMs,
+            designers, and 7 other engineers accelerate their own execution.
+            Built and scaled the Platform Engineering discipline from an
+            individual contributor role to an organization-wide standard,
+            expanding a Radix/Tailwind component system to 60 production
             components.
           </li>
           <li>
-            <strong>AI Systems Architecture &amp; Governance:</strong> Designed and
-            shipped a 1,766-line governance system for AI agents. Conducted a controlled
-            study (n=9) proving that passive AI rules achieve 0% behavioral compliance,
-            then built an active enforcement layer that actually works.
+            <strong>AI Systems Architecture &amp; Governance:</strong> Designed
+            and shipped a 1,766-line governance system for AI agents. Conducted
+            a controlled study (n=9) proving that passive AI rules achieve 0%
+            behavioral compliance, then built an active enforcement layer that
+            actually works.
           </li>
           <li>
-            <strong>Automated Migration Tooling:</strong> Built 12 custom CLI tools
-            and an automated migration bot with 5-factor confidence scoring to safely
-            transition 962+ files across 44 asset bundles. Managed live coexistence
-            (880 files on old framework, 355 on the new design system, across 6 packages).
+            <strong>Automated Migration Tooling:</strong> Built 12 custom CLI
+            tools and an automated migration bot with 5-factor confidence
+            scoring to safely transition 962+ files across 44 asset bundles.
+            Managed live coexistence (880 files on old framework, 355 on the new
+            design system, across 6 packages).
           </li>
           <li>
-            <strong>Performance Optimization:</strong> Owned signup performance on
-            the executive scorecard, driving LCP from 9.8s to 3.44s (-65%). Built
-            the measurement and shipped RUM regression alerting that now pages on
-            the three highest-traffic pages.
+            <strong>Performance Optimization:</strong> Owned signup performance
+            on the executive scorecard, driving LCP from 9.8s to 3.44s (-65%).
+            Built the measurement and shipped RUM regression alerting that now
+            pages on the three highest-traffic pages.
           </li>
           <li>
-            <strong>Cross-Functional Enablement:</strong> Created the "Claude Design
-            Production" pipeline, empowering Product Managers and Designers to rapidly
-            prototype and ship production-ready prototypes directly to feature branches.
+            <strong>Cross-Functional Enablement:</strong> Created the "Claude
+            Design Production" pipeline, empowering Product Managers and
+            Designers to rapidly prototype and ship production-ready prototypes
+            directly to feature branches.
           </li>
         </ul>
       </TimeLineElement>
@@ -123,26 +127,27 @@ const schemaData = {
       >
         <ul class="list-disc ml-4 space-y-1">
           <li>
-            <strong>Technical Leadership:</strong> Led a cross-functional team of
-            6 front-end and full-stack engineers, driving feature delivery, code quality,
-            performance standards, and developer mentorship.
+            <strong>Technical Leadership:</strong> Led a cross-functional team
+            of 6 front-end and full-stack engineers, driving feature delivery,
+            code quality, performance standards, and developer mentorship.
           </li>
           <li>
-            <strong>Dynamic Web Architecture:</strong> Architected an automated dynamic
-            landing page generator leveraging Algolia, Cloudinary, GitLab, and custom
-            Next.js API routes. These dynamic pages featured extensive chart and graph
-            visualizations built for an enterprise client, blending rigorous data
-            pipelines with pixel-perfect frontend craft.
+            <strong>Dynamic Web Architecture:</strong> Architected an automated
+            dynamic landing page generator leveraging Algolia, Cloudinary,
+            GitLab, and custom Next.js API routes. These dynamic pages featured
+            extensive chart and graph visualizations built for an enterprise
+            client, blending rigorous data pipelines with pixel-perfect frontend
+            craft.
           </li>
           <li>
-            <strong>API &amp; System Design:</strong> Engineered reusable form engines
-            integrating HubSpot and FormStack APIs, alongside a site-wide user favoriting
-            system.
+            <strong>API &amp; System Design:</strong> Engineered reusable form
+            engines integrating HubSpot and FormStack APIs, alongside a
+            site-wide user favoriting system.
           </li>
           <li>
-            <strong>Core Infrastructure &amp; SEO:</strong> Managed critical WordPress
-            core updates, established technical system documentation, and led site-wide
-            SEO/metadata overhauls using Algolia Search.
+            <strong>Core Infrastructure &amp; SEO:</strong> Managed critical
+            WordPress core updates, established technical system documentation,
+            and led site-wide SEO/metadata overhauls using Algolia Search.
           </li>
         </ul>
       </TimeLineElement>
@@ -208,6 +213,8 @@ const schemaData = {
   </section>
 
   <ul class="list-disc md:columns-5 columns-2 mx-6">
-    {SKILLS_DATA.map((skill) => <li class="p-1">{skill.name}</li>)}
+    {SKILLS_DATA.map((skill) => (
+      <li class="p-1">{skill.name}</li>
+    ))}
   </ul>
 </BaseLayout>
