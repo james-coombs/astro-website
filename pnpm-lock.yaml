@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  typescript: ^5.8.0
+  typescript: ^5.9.3
 
 importers:
   .:
@@ -72,7 +72,7 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(prettier@3.9.10)
       typescript:
-        specifier: ^5.8.0
+        specifier: ^5.9.3
         version: 5.9.3
 
 packages:
@@ -90,7 +90,7 @@ packages:
       }
     hasBin: true
     peerDependencies:
-      typescript: ^5.8.0
+      typescript: ^5.9.3
 
   "@astrojs/compiler-binding-android-arm64@0.4.1":
     resolution:
@@ -1657,7 +1657,7 @@ packages:
     engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0 }
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
-      typescript: ^5.8.0
+      typescript: ^5.9.3
 
   "@typescript-eslint/project-service@8.71.2":
     resolution:
@@ -1666,7 +1666,7 @@ packages:
       }
     engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0 }
     peerDependencies:
-      typescript: ^5.8.0
+      typescript: ^5.9.3
 
   "@typescript-eslint/scope-manager@8.71.2":
     resolution:
@@ -1682,7 +1682,7 @@ packages:
       }
     engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0 }
     peerDependencies:
-      typescript: ^5.8.0
+      typescript: ^5.9.3
 
   "@typescript-eslint/types@8.71.2":
     resolution:
@@ -1698,7 +1698,7 @@ packages:
       }
     engines: { node: ^18.18.0 || ^20.9.0 || >=21.1.0 }
     peerDependencies:
-      typescript: ^5.8.0
+      typescript: ^5.9.3
 
   "@typescript-eslint/visitor-keys@8.71.2":
     resolution:
@@ -1719,7 +1719,7 @@ packages:
         integrity: sha512-cKX4vK9dtZvDRaAzeoUdaAJEew6IdxHNCRrdp5Kvcl6zZOqb6jTOfk3kXkIkG3T7oTFXguEMt5+9ptyqYR84Pg==,
       }
     peerDependencies:
-      typescript: ^5.8.0
+      typescript: ^5.9.3
 
   "@volar/language-core@2.4.28":
     resolution:
@@ -1733,7 +1733,7 @@ packages:
         integrity: sha512-NqcLnE5gERKuS4PUFwlhMxf6vqYo7hXtbMFbViXcbVkbZ905AIVWhnSo0ZNBC2V127H1/2zP7RvVOVnyITFfBw==,
       }
     peerDependencies:
-      typescript: ^5.8.0
+      typescript: ^5.9.3
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -1744,7 +1744,7 @@ packages:
         integrity: sha512-Rh/wYCZJrI5vCwMk9xyw/Z+MsWxlJY1rmMZPsxUoJKfzIRjS/NF1NmnuEcrMbEVGja00aVpCsInJfixQTMdvLw==,
       }
     peerDependencies:
-      typescript: ^5.8.0
+      typescript: ^5.9.3
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -1761,7 +1761,7 @@ packages:
         integrity: sha512-Ja6yvWrbis2QtN4ClAKreeUZPVYMARDYZl9LMEv1iQ1QdepB6wn0jTRxA9MftYmYa4DQ4k/DaSZpFPUfxl8giw==,
       }
     peerDependencies:
-      typescript: ^5.8.0
+      typescript: ^5.9.3
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -4674,7 +4674,7 @@ packages:
       }
     engines: { node: ">=18.12" }
     peerDependencies:
-      typescript: ^5.8.0
+      typescript: ^5.9.3
 
   ts-interface-checker@0.1.13:
     resolution:
@@ -5039,7 +5039,7 @@ packages:
       }
     peerDependencies:
       "@volar/language-service": ~2.4.0
-      typescript: ^5.8.0
+      typescript: ^5.9.3
     peerDependenciesMeta:
       "@volar/language-service":
         optional: true
@@ -5053,7 +5053,7 @@ packages:
       }
     peerDependencies:
       "@volar/language-service": ~2.4.0
-      typescript: ^5.8.0
+      typescript: ^5.9.3
     peerDependenciesMeta:
       "@volar/language-service":
         optional: true
