@@ -46,72 +46,66 @@ const { tag } = Astro.params;
     <h1 class="text-3xl w-full font-bold">Tag: #{tag}</h1>
   </header>
 
-  {
-    page.data.length === 0 ? (
-      <div class="bg-base-200 border-l-4 border-secondary w-full p-6 rounded-r-lg">
-        <p class="font-bold text-lg mb-1">No articles found with this tag.</p>
-      </div>
-    ) : (
-      <section class="space-y-4">
-        {page.data.map((post: CollectionEntry<"blog">) => (
-          <>
-            <HorizontalCard
-              title={post.data.title}
-              img={post.data.heroImage}
-              desc={post.data.description}
-              url={formatBlogLink(post.data.slug, post.id)}
-              target="_self"
-              badge={post.data.badge}
-              tags={post.data.tags}
-            />
-            <div class="divider my-0" />
-          </>
-        ))}
-      </section>
-    )
-  }
+  {page.data.length === 0 ? (
+    <div class="bg-base-200 border-l-4 border-secondary w-full p-6 rounded-r-lg">
+      <p class="font-bold text-lg mb-1">No articles found with this tag.</p>
+    </div>
+  ) : (
+    <section class="space-y-4">
+      {page.data.map((post: CollectionEntry<"blog">) => (
+        <>
+          <HorizontalCard
+            title={post.data.title}
+            img={post.data.heroImage}
+            desc={post.data.description}
+            url={formatBlogLink(post.data.slug, post.id)}
+            target="_self"
+            badge={post.data.badge}
+            tags={post.data.tags}
+          />
+          <div class="divider my-0" />
+        </>
+      ))}
+    </section>
+  )}
 
   <!-- Accessible Pagination Navigation -->
   <nav class="flex justify-between my-10" aria-label="Tag pagination">
-    {
-      page.url.prev ? (
-        <a
-          href={`${page.url.prev}/`}
-          aria-label={`Navigate to ${page.url.prev}/`}
-          class="btn btn-ghost mx-2 flex items-center gap-2"
+    {page.url.prev ? (
+      <a
+        href={`${page.url.prev}/`}
+        aria-label={`Navigate to ${page.url.prev}/`}
+        class="btn btn-ghost mx-2 flex items-center gap-2"
+      >
+        <svg
+          class="h-5 w-5 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
         >
-          <svg
-            class="h-5 w-5 fill-current"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
-          </svg>
-          <span>Recent posts</span>
-        </a>
-      ) : (
-        <div />
-      )
-    }
-    {
-      page.url.next ? (
-        <a
-          href={`${page.url.next}/`}
-          aria-label={`Navigate to ${page.url.next}/`}
-          class="btn btn-ghost mx-2 flex items-center gap-2"
+          <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
+        </svg>
+        <span>Recent posts</span>
+      </a>
+    ) : (
+      <div />
+    )}
+    {page.url.next ? (
+      <a
+        href={`${page.url.next}/`}
+        aria-label={`Navigate to ${page.url.next}/`}
+        class="btn btn-ghost mx-2 flex items-center gap-2"
+      >
+        <span>Older posts</span>
+        <svg
+          class="h-5 w-5 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
         >
-          <span>Older posts</span>
-          <svg
-            class="h-5 w-5 fill-current"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-          </svg>
-        </a>
-      ) : (
-        <div />
-      )
-    }
+          <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
+        </svg>
+      </a>
+    ) : (
+      <div />
+    )}
   </nav>
 </BaseLayout>

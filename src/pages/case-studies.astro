@@ -36,7 +36,6 @@ const schemaData = {
     type="application/ld+json"
     set:html={JSON.stringify(schemaData)}
   />
-
   <header class="mb-8">
     <h1 class="text-3xl w-full font-bold">Case Studies &amp; Shipped Work</h1>
     <p class="text-base-content/80 mt-2 text-lg">
@@ -54,22 +53,20 @@ const schemaData = {
     </div>
 
     <div class="space-y-4">
-      {
-        CASE_STUDIES.map((study) => (
-          <>
-            <HorizontalCard
-              title={study.title}
-              problem={study.problem}
-              architecture={study.architecture}
-              outcome={study.outcome}
-              url={study.url}
-              target="_self"
-              badge="Case Study"
-            />
-            <div class="divider my-0" />
-          </>
-        ))
-      }
+      {CASE_STUDIES.map((study) => (
+        <>
+          <HorizontalCard
+            title={study.title}
+            problem={study.problem}
+            architecture={study.architecture}
+            outcome={study.outcome}
+            url={study.url}
+            target="_self"
+            badge="Case Study"
+          />
+          <div class="divider my-0" />
+        </>
+      ))}
     </div>
   </section>
 </BaseLayout>

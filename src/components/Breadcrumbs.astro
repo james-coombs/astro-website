@@ -36,7 +36,6 @@ const breadcrumbSchema = {
   type="application/ld+json"
   set:html={JSON.stringify(breadcrumbSchema)}
 />
-
 <nav aria-label="Breadcrumbs" class="text-xs text-base-content/70 mb-4">
   <ol class="flex items-center gap-0.5 flex-wrap list-none p-0">
     <li class="flex items-center p-0">
@@ -48,25 +47,23 @@ const breadcrumbSchema = {
         Home
       </a>
     </li>
-    {
-      items.map((item) => (
-        <li class="flex items-center gap-0.5">
-          <span class="text-base-content/40 select-none px-0.5">/</span>
-          {item.href ? (
-            <a
-              href={`${item.href}/`}
-              aria-label={`Navigate to ${item.label}/`}
-              class="hover:text-primary hover:bg-base-200/60 transition-colors py-1 px-1.5 rounded inline-flex items-center"
-            >
-              {item.label}
-            </a>
-          ) : (
-            <span class="text-base-content/75 font-normal line-clamp-1 max-w-[200px] py-1 px-1.5">
-              {item.label}
-            </span>
-          )}
-        </li>
-      ))
-    }
+    {items.map((item) => (
+      <li class="flex items-center gap-0.5">
+        <span class="text-base-content/40 select-none px-0.5">/</span>
+        {item.href ? (
+          <a
+            href={`${item.href}/`}
+            aria-label={`Navigate to ${item.label}/`}
+            class="hover:text-primary hover:bg-base-200/60 transition-colors py-1 px-1.5 rounded inline-flex items-center"
+          >
+            {item.label}
+          </a>
+        ) : (
+          <span class="text-base-content/75 font-normal line-clamp-1 max-w-[200px] py-1 px-1.5">
+            {item.label}
+          </span>
+        )}
+      </li>
+    ))}
   </ol>
 </nav>
