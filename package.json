@@ -10,7 +10,7 @@
     "start": "astro dev",
     "build": "astro build",
     "audit:links": "node scripts/audit-links.mjs",
-    "audit:external": "linkinator ./dist --recurse --server --skip '^https?://(?!localhost|127\\.0\\.0\\.1)'",
+    "audit:external": "linkinator ./dist --recurse --server --skip '^https?://(localhost|127\\.0\\.0\\.1)'",
     "postbuild": "pnpm audit:links",
     "preview": "astro preview",
     "astro": "astro",
