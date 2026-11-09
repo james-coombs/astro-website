@@ -12,12 +12,16 @@ export async function getStaticPaths({
 }) {
   const allPosts = await getCollection("blog");
   const allTags = [
-    ...new Set(allPosts.flatMap((post) => post.data.tags || [])),
+    ...new Set(
+      allPosts
+        .flatMap((post) => post.data.tags || [])
+        .map((tag) => tag.toLowerCase()),
+    ),
   ];
 
   return allTags.flatMap((tag) => {
     const filteredPosts = allPosts.filter((post) =>
-      post.data.tags?.includes(tag),
+      post.data.tags?.map((t) => t.toLowerCase()).includes(tag),
     );
     filteredPosts.sort(
       (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -73,8 +77,8 @@ const { tag } = Astro.params;
   <nav class="flex justify-between my-10" aria-label="Tag pagination">
     {page.url.prev ? (
       <a
-        href={`${page.url.prev}/`}
-        aria-label={`Navigate to ${page.url.prev}/`}
+        href={page.url.prev.endsWith("/") ? page.url.prev : `${page.url.prev}/`}
+        aria-label="Navigate to recent posts"
         class="btn btn-ghost mx-2 flex items-center gap-2"
       >
         <svg
@@ -91,8 +95,8 @@ const { tag } = Astro.params;
     )}
     {page.url.next ? (
       <a
-        href={`${page.url.next}/`}
-        aria-label={`Navigate to ${page.url.next}/`}
+        href={page.url.next.endsWith("/") ? page.url.next : `${page.url.next}/`}
+        aria-label="Navigate to older posts"
         class="btn btn-ghost mx-2 flex items-center gap-2"
       >
         <span>Older posts</span>

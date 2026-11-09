@@ -13,7 +13,7 @@ const blogCollection = defineCollection({
       heroImage: image().optional(),
       badge: z.string().optional(),
       tags: z
-        .array(z.string())
+        .array(z.string().toLowerCase())
         .refine((items) => new Set(items).size === items.length, {
           message: "tags must be unique",
         })
