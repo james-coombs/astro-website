@@ -1,6 +1,7 @@
 #!/bin/sh
 # Load user PATH so pnpm and node are available to Husky
 export PATH="$PATH:/usr/local/bin:$HOME/.nvm/versions/node/$(node -v 2>/dev/null)/bin:$HOME/.local/share/pnpm"
+export ASTRO_TELEMETRY_DISABLED=1
 
 pnpm typecheck
 pnpm exec lint-staged
