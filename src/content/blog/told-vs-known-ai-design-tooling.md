@@ -3,7 +3,7 @@ title: '"Told" vs. "Known": The One Variable That Predicts AI Design Tool Qualit
 description: "AI design tools succeed or fail on one variable: whether the model is told what to do or can query what is actually known. The distinction that predicts output quality."
 pubDate: "Jul 24 2026"
 heroImage: "../../assets/blog/told-vs-known-ai-design-tooling/hero.webp"
-tags: ["AI", "designsystems", "machinelearning", "productivity"]
+tags: ["ai", "designsystems", "machinelearning", "productivity"]
 slug: "told-vs-known-ai-design-tooling"
 ---
 

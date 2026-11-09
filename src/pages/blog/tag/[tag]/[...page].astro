@@ -12,12 +12,16 @@ export async function getStaticPaths({
 }) {
   const allPosts = await getCollection("blog");
   const allTags = [
-    ...new Set(allPosts.flatMap((post) => post.data.tags || [])),
+    ...new Set(
+      allPosts
+        .flatMap((post) => post.data.tags || [])
+        .map((tag) => tag.toLowerCase()),
+    ),
   ];
 
   return allTags.flatMap((tag) => {
     const filteredPosts = allPosts.filter((post) =>
-      post.data.tags?.includes(tag),
+      post.data.tags?.map((t) => t.toLowerCase()).includes(tag),
     );
     filteredPosts.sort(
       (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),

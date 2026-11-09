@@ -12,5 +12,10 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [mdx(), sitemap()],
+  integrations: [
+    mdx(),
+    sitemap({
+      filter: (page) => page !== "https://james-coombs.com/blog/tag/",
+    }),
+  ],
 });
