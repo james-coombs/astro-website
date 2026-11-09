@@ -47,7 +47,7 @@ export const CAREER_PROJECTS: Project[] = [
       "A 1,766-line governance system for AI agents that enforces active safety hooks and coding standards across production repositories.",
     description:
       "Built and empirically validated (82 runs) an active enforcement engine for AI coding agents. Replaced passive documentation with hook-based runtime gating, achieving 100% compliance in agentic workflows.",
-    url: "/resume#rev",
+    url: "/resume/#rev",
     repo: "https://github.com/james-coombs",
     badge: "AI Governance",
   },
@@ -66,7 +66,7 @@ export const CAREER_PROJECTS: Project[] = [
       "A suite of 12 CLI tools and an automated migration bot built to safely transition design system components at scale.",
     description:
       "Engineered a 15-state machine with 5-factor confidence scoring to automate the migration of 962+ files across 44 asset bundles with ratcheted state enforcement.",
-    url: "/resume#rev",
+    url: "/resume/#rev",
     repo: "https://github.com/james-coombs",
     badge: "DS Migration",
   },
@@ -84,7 +84,7 @@ export const CAREER_PROJECTS: Project[] = [
       "An architectural overhaul of a complex web transcript editor focused on drastically reducing rendering time and interaction latency.",
     description:
       "Achieved a 94% reduction in rendering overhead and reduced scripting execution by 57%, bringing Interaction to Next Paint (INP) down from 3,297ms to 112ms.",
-    url: "/resume#rev",
+    url: "/resume/#rev",
     repo: "https://github.com/james-coombs",
     badge: "Performance Engineering",
   },
@@ -97,7 +97,7 @@ export const CAREER_PROJECTS: Project[] = [
       "An enterprise design system scaled from ground zero to 62+ accessible production components.",
     description:
       "Architected a unified design system discipline and created the 'Claude Design Production' pipeline, enabling PMs and designers to prototype and ship production code directly to feature branches.",
-    url: "/resume#rev",
+    url: "/resume/#rev",
     repo: "https://github.com/james-coombs",
     badge: "Design Systems",
   },
@@ -116,7 +116,7 @@ export const CAREER_PROJECTS: Project[] = [
       "Automated dynamic landing page creation pipeline for multi-channel marketing campaigns.",
     description:
       "Architected an automated dynamic page engine leveraging Algolia search indexing, Cloudinary media processing, and custom Next.js API routes.",
-    url: "/resume#cervello",
+    url: "/resume/#cervello",
     repo: "https://github.com/james-coombs",
     badge: "Architecture",
   },
@@ -236,7 +236,7 @@ export const CASE_STUDIES: CASE_STUDY[] = [
       "Built a dynamic landing page generation engine leveraging Next.js API routes, Algolia, Cloudinary, and GitLab CI/CD. Built a custom Node.js CLI tool to map listing data to image assets.",
     outcome:
       "Replaced the month-long bottleneck by automating the publishing of over 400 location-based landing pages, allowing marketing to deploy data-driven shopping experiences at scale.",
-    url: "/resume#cervello",
+    url: "/resume/#cervello",
   },
   {
     id: "cross-session-favorites",
@@ -247,7 +247,7 @@ export const CASE_STUDIES: CASE_STUDY[] = [
       "Engineered a complex cross-session favoriting system leveraging the BroadcastChannel API for real-time cross-tab sync, and local storage to handle the anonymous-to-authenticated state merge.",
     outcome:
       "Drove over 3,000 new user signups and 6,000 saved items within the first two months of launch.",
-    url: "/resume#cervello",
+    url: "/resume/#cervello",
   },
   {
     id: "signup-performance-overhaul",
@@ -258,7 +258,7 @@ export const CASE_STUDIES: CASE_STUDY[] = [
       "Split the signup webpack bundle, removed blocking dependencies, and established a frozen performance baseline.",
     outcome:
       "Cut interaction lag (INP) by 94% and dropped signup LCP by 66%, exceeding the business goal. Built RUM regression alerting to ensure the fix stayed fixed.",
-    url: "/resume#rev",
+    url: "/resume/#rev",
   },
   {
     id: "design-system-and-migration-engine",
@@ -269,6 +269,6 @@ export const CASE_STUDIES: CASE_STUDY[] = [
       "Built a suite of 12 custom CLI tools to automate the codebase transition, alongside a 60-component design system.",
     outcome:
       'Shipped the migration and managed live coexistence (880 files on old framework, 355 on the new design system, across 6 packages), creating a "Design to Production" pipeline that let PMs prototype directly into feature branches.',
-    url: "/resume#rev",
+    url: "/resume/#rev",
   },
 ];

@@ -25,7 +25,9 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: index + 2,
       name: item.label,
-      ...(item.href && { item: `https://james-coombs.com${item.href}/` }),
+      ...(item.href && {
+        item: `https://james-coombs.com${item.href.endsWith("/") ? item.href : `${item.href}/`}`,
+      }),
     })),
   ],
 };
@@ -52,8 +54,8 @@ const breadcrumbSchema = {
         <span class="text-base-content/40 select-none px-0.5">/</span>
         {item.href ? (
           <a
-            href={`${item.href}/`}
-            aria-label={`Navigate to ${item.label}/`}
+            href={item.href.endsWith("/") ? item.href : `${item.href}/`}
+            aria-label={`Navigate to ${item.label}`}
             class="hover:text-primary hover:bg-base-200/60 transition-colors py-1 px-1.5 rounded inline-flex items-center"
           >
             {item.label}
