@@ -7,9 +7,9 @@ const schemaData = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "James Coombs",
-  jobTitle: "Product Engineer",
+  jobTitle: "Staff UX Engineer",
   description:
-    "Product Engineer specializing in AI Governance, Design Systems at scale, Developer Experience, and Web Performance Engineering.",
+    "Staff UX Engineer specializing in AI Governance, Design Systems at scale, Developer Experience, and Web Performance Engineering.",
   knowsAbout: [
     "AI Governance",
     "LLM Engineering",
@@ -31,16 +31,12 @@ const schemaData = {
       "@type": "EducationalOrganization",
       name: "University of California, Irvine",
     },
-    {
-      "@type": "EducationalOrganization",
-      name: "General Assembly",
-    },
   ],
 };
 ---
 
 <BaseLayout
-  title="James Coombs | Product Engineer Resume"
+  title="James Coombs | Staff UX Engineer Resume"
   sideBarActiveItemID="resume"
 >
   <!-- JSON-LD Structured Data for AEO / SEO -->
@@ -50,16 +46,16 @@ const schemaData = {
     set:html={JSON.stringify(schemaData)}
   />
   <header class="mb-5">
-    <h1 class="text-3xl w-full font-bold">James Coombs — Resume</h1>
+    <h1 class="text-3xl w-full font-bold">James Coombs | Resume</h1>
     <p class="text-sm text-base-content/70 mt-1">
-      Product Engineer &amp; AI Systems Architect
+      Staff UX Engineer &amp; AI Systems Architect
     </p>
   </header>
 
   <section class="mb-10 text-left leading-relaxed">
     <p>
-      <strong>James Coombs</strong> is a Product Engineer specializing in Design
-      Systems at scale, AI Governance, and high-demand web application
+      <strong>James Coombs</strong> is a Staff UX Engineer specializing in
+      Design Systems at scale, AI Governance, and high-demand web application
       performance. Leverages a background in Psychology to engineer intuitive
       developer experiences, agentic AI workflows, and resilient front-end
       architecture that allows engineering organizations to move fast without
@@ -75,45 +71,62 @@ const schemaData = {
     <!-- Rev -->
     <div id="rev" class="scroll-mt-20">
       <TimeLineElement
-        title="Senior UX Engineer"
-        subtitle="Dec 2024 — Present | Rev — Peabody, MA"
+        title="Staff UX Engineer"
+        subtitle="Dec 2024 - Present | Rev | Greater Boston Area / Remote"
       >
         <ul class="list-disc ml-4 space-y-1">
           <li>
-            <strong>Technical Product Management & AI Scale:</strong> Personally
-            completed 127 Jira tickets using AI agents to ship 3x more
-            production code faster, and built the tooling that helped PMs,
-            designers, and 7 other engineers accelerate their own execution.
-            Built and scaled the Platform Engineering discipline from an
-            individual contributor role to an organization-wide standard,
-            expanding a Radix/Tailwind component system to 60 production
-            components.
+            <strong>Design System &amp; Monorepo Foundation:</strong>{" "}
+            Architected and scaled a 60-component accessible design system
+            (Radix, Tailwind) across 14 published versions with 100% test
+            coverage (~1,300 Vitest tests), synced Figma tokens to Tailwind
+            variables, and created 5 foundational monorepo ESLint, TypeScript,
+            Vitest, and test-utility config packages.
           </li>
           <li>
-            <strong>AI Systems Architecture &amp; Governance:</strong> Designed
-            and shipped a 1,766-line governance system for AI agents. Conducted
-            a controlled study (n=9) proving that passive AI rules achieve 0%
-            behavioral compliance, then built an active enforcement layer that
-            actually works.
+            <strong>Framework Migration &amp; Codebase Automation:</strong>
+            Shipped 12 custom CLI tools, 48 JSON data files (as of 2026-11-05),
+            and an automated migration engine driving a 962-file framework
+            migration (cutting legacy MUI files from 999 down to 792 while
+            growing Design System files to 508). Purged legacy icons across 19
+            packages and 275 files (-18.7 MB unpacked, -19.3 MB packaged).
           </li>
           <li>
-            <strong>Automated Migration Tooling:</strong> Built 12 custom CLI
-            tools and an automated migration bot with 5-factor confidence
-            scoring to safely transition 962+ files across 44 asset bundles.
-            Managed live coexistence (880 files on old framework, 355 on the new
-            design system, across 6 packages).
+            <strong>AI Execution Governance &amp; Platform Safety:</strong>
+            Maintained 87% delegated execution (538 subagent sessions vs 79
+            human sessions) as an IC output multiplier. Designed an n=9 ablation
+            study proving written AI rules achieve 0% shell compliance, then
+            architected a 1,802-line executable hook layer across 13 scripts
+            backed by 219 tests and 1,251 manual approvals.
           </li>
           <li>
-            <strong>Performance Optimization:</strong> Owned signup performance
-            on the executive scorecard, driving LCP from 9.8s to 3.44s (-65%).
-            Built the measurement and shipped RUM regression alerting that now
-            pages on the three highest-traffic pages.
+            <strong>Web Performance &amp; Observability Engineering:</strong>
+            Drove Signup LCP p75 from 9.8s down to 3.19s (-67%) and render delay
+            from 8.4s to 2.6s, monitored via 7 RUM observability dashboards
+            managed as code and 6 production alerts. Cut Transcript Editor
+            interaction latency (INP p98) from 2,169ms down to 112ms (-95%) on
+            4.5-hour files, reducing style recalculations from 57,000 to 9,500
+            elements.
           </li>
           <li>
-            <strong>Cross-Functional Enablement:</strong> Created the "Claude
-            Design Production" pipeline, empowering Product Managers and
-            Designers to rapidly prototype and ship production-ready prototypes
-            directly to feature branches.
+            <strong>
+              Cross-Team Code Review &amp; Architectural Ownership:
+            </strong>
+            Authored 558 pull requests (469 merged, top-4 org-wide) across 10
+            repositories and conducted 142 formal code reviews for 24 distinct
+            engineers across 9 repositories. Governed 12 CODEOWNERS paths,
+            authored 12 Architecture Decision Records (ADRs), and wrote 65 of
+            146 org engineering documentation pages (45% of org output).
+          </li>
+          <li>
+            <strong>User Reliability &amp; Velocity Enablement:</strong> Slashed
+            blank Home dashboard sessions from 22.9 down to 2.4 per 1,000
+            sessions (beating the 7.0 stretch target), eliminated
+            translated-browser onboarding crashes from 1,109 weekly sessions
+            down to 1, and verified upload failure drop from 1.81% to 1.13%.
+            Authored 152 technical specs in six weeks and personally completed
+            127 Jira tickets using AI tooling to help engineers, PMs, and
+            designers ship faster.
           </li>
         </ul>
       </TimeLineElement>
@@ -123,7 +136,7 @@ const schemaData = {
     <div id="cervello" class="scroll-mt-20">
       <TimeLineElement
         title="UI Developer"
-        subtitle="Jun 2020 — Sep 2024 | Cervello — Boston, MA"
+        subtitle="Jun 2020 - Sep 2024 | Cervello | Boston, MA"
       >
         <ul class="list-disc ml-4 space-y-1">
           <li>
@@ -157,7 +170,7 @@ const schemaData = {
     <div id="collette" class="scroll-mt-20">
       <TimeLineElement
         title="Full Stack Web Developer"
-        subtitle="Feb 2018 — Jun 2020 | Collette"
+        subtitle="Feb 2018 - Jun 2020 | Collette"
       >
         <ul class="list-disc ml-4 space-y-1">
           <li>
@@ -184,7 +197,7 @@ const schemaData = {
     <div id="putnam" class="scroll-mt-20">
       <TimeLineElement
         title="Web Producer"
-        subtitle="Mar 2017 — Feb 2018 | Putnam Investments — Boston, MA"
+        subtitle="Mar 2017 - Feb 2018 | Putnam Investments | Boston, MA"
       >
         Built responsive web pages using HTML, CSS, JavaScript, and Freemarker
         Template Language (FTL), completing rapid site deployments under strict
@@ -200,11 +213,11 @@ const schemaData = {
   <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
       title="Psychology and Social Behavior"
-      subtitle="2013 — 2016 | University of California, Irvine"
+      subtitle="2013 - 2016 | University of California, Irvine"
     />
     <TimeLineElement
       title="Associate's Degree in Psychology"
-      subtitle="2011 — 2013 | Marymount College"
+      subtitle="2011 - 2013 | Marymount College"
     />
   </div>
 

@@ -2,10 +2,10 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE =
-  "James Coombs | Senior Design Engineer & AI Governance";
+  "James Coombs | Staff UX Engineer & AI Systems Architect";
 
 export const SITE_DESCRIPTION =
-  "Senior Design Engineer specializing in AI Governance, Agentic Safety Architecture, Design System Migrations at scale, and Web Performance Engineering.";
+  "Staff UX Engineer specializing in AI Governance, Agentic Safety Architecture, Design System Migrations at scale, and Web Performance Engineering.";
 
 export const SITE_URL = "https://james-coombs.com";
 export const SITE_AUTHOR = "James Coombs";
@@ -44,9 +44,9 @@ export const CAREER_PROJECTS: Project[] = [
       "Claude API",
     ],
     overview:
-      "A 1,766-line governance system for AI agents that enforces active safety hooks and coding standards across production repositories.",
+      "A 1,802-line governance system for AI agents that enforces active safety hooks and coding standards across production repositories.",
     description:
-      "Built and empirically validated (82 runs) an active enforcement engine for AI coding agents. Replaced passive documentation with hook-based runtime gating, achieving 100% compliance in agentic workflows.",
+      "Built and empirically validated an active enforcement engine for AI coding agents across 13 scripts, backed by 219 tests and 1,251 manual approvals. Replaced passive documentation with hook-based runtime gating, achieving 100% compliance in agentic workflows.",
     url: "/resume/#rev",
     repo: "https://github.com/james-coombs",
     badge: "AI Governance",
@@ -65,7 +65,7 @@ export const CAREER_PROJECTS: Project[] = [
     overview:
       "A suite of 12 CLI tools and an automated migration bot built to safely transition design system components at scale.",
     description:
-      "Engineered a 15-state machine with 5-factor confidence scoring to automate the migration of 962+ files across 44 asset bundles with ratcheted state enforcement.",
+      "Engineered an automated migration engine to transition 962 files (cutting legacy Material UI files from 999 to 792 and growing Design System files to 508) across 48 JSON data files, purging 275 files and dropping 18.7 MB unpacked install size.",
     url: "/resume/#rev",
     repo: "https://github.com/james-coombs",
     badge: "DS Migration",
@@ -83,7 +83,7 @@ export const CAREER_PROJECTS: Project[] = [
     overview:
       "An architectural overhaul of a complex web transcript editor focused on drastically reducing rendering time and interaction latency.",
     description:
-      "Achieved a 94% reduction in rendering overhead and reduced scripting execution by 57%, bringing Interaction to Next Paint (INP) down from 3,297ms to 112ms.",
+      "Cut interaction latency (INP p98) from 2,169ms down to 112ms (-95%) on 4.5-hour files, reducing style recalculations from 57,000 to 9,500 elements.",
     url: "/resume/#rev",
     repo: "https://github.com/james-coombs",
     badge: "Performance Engineering",
@@ -94,9 +94,9 @@ export const CAREER_PROJECTS: Project[] = [
     title: "Scalable Radix & Tailwind Component System",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Radix UI", "Astro"],
     overview:
-      "An enterprise design system scaled from ground zero to 62+ accessible production components.",
+      "An enterprise design system scaled from ground zero to 60 accessible production components.",
     description:
-      "Architected a unified design system discipline and created the 'Claude Design Production' pipeline, enabling PMs and designers to prototype and ship production code directly to feature branches.",
+      "Architected a unified design system discipline across 14 published versions with 100% test coverage (~1,300 Vitest tests), enabling PMs and designers to prototype and ship production code directly to feature branches.",
     url: "/resume/#rev",
     repo: "https://github.com/james-coombs",
     badge: "Design Systems",
@@ -251,24 +251,24 @@ export const CASE_STUDIES: CASE_STUDY[] = [
   },
   {
     id: "signup-performance-overhaul",
-    title: "Signup Performance Overhaul (LCP 9.8s to 3.3s)",
+    title: "Signup Performance Overhaul (LCP 9.8s to 3.19s)",
     problem:
       "Interaction lag and slow page loads were hurting conversion on critical web funnels.",
     architecture:
       "Split the signup webpack bundle, removed blocking dependencies, and established a frozen performance baseline.",
     outcome:
-      "Cut interaction lag (INP) by 94% and dropped signup LCP by 66%, exceeding the business goal. Built RUM regression alerting to ensure the fix stayed fixed.",
+      "Dropped signup LCP p75 from 9.8s to 3.19s (-67%) with render delay reduced from 8.4s to 2.6s. Built 7 RUM observability dashboards and 6 production alerts to ensure performance stayed locked.",
     url: "/resume/#rev",
   },
   {
     id: "design-system-and-migration-engine",
-    title: "The Spark Design System & Migration Engine",
+    title: "Design System & Codebase Migration Engine",
     problem:
-      "Moving 962 files across 44 bundles from Material UI to a custom Radix/Tailwind system without breaking production.",
+      "Moving 962 files from Material UI to a custom Radix/Tailwind system without breaking production.",
     architecture:
-      "Built a suite of 12 custom CLI tools to automate the codebase transition, alongside a 60-component design system.",
+      "Built a suite of 12 custom CLI tools and 48 JSON data files to automate the codebase transition, alongside a 60-component design system.",
     outcome:
-      'Shipped the migration and managed live coexistence (880 files on old framework, 355 on the new design system, across 6 packages), creating a "Design to Production" pipeline that let PMs prototype directly into feature branches.',
+      'Shipped the framework migration cutting legacy Material UI files from 999 down to 792 while Design System imports grew to 508, purging 275 legacy files (-18.7 MB unpacked) under an automated "Design to Production" pipeline.',
     url: "/resume/#rev",
   },
 ];
