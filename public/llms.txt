@@ -1,6 +1,6 @@
 # James Coombs
 
-> Staff UX Engineer / UI Architect | Bridging design systems, web performance, and AI platform tooling at scale.
+> Staff UX Engineer | Product Architecture, Design Systems, Web Performance & AI Developer Tooling.
 
 ## Context & Core Technical Focus
 - **Product & Growth Engineering**: Architecting fast, data-driven web experiences that optimize conversion, SEO, and user engagement.
@@ -9,13 +9,15 @@
 - **Performance Engineering**: DOM rendering optimizations, script execution reductions, and Core Web Vitals (INP, LCP) overhauls.
 
 ## Key Case Studies
-- [SEO Landing Page Engine](https://james-coombs.com/case-studies/): Built a dynamic landing page generation engine leveraging Next.js API routes, Algolia, Cloudinary, and GitLab CI/CD, empowering the business to deploy data-driven shopping experiences at scale without manual engineering intervention.
-- [Signup Performance Overhaul](https://james-coombs.com/case-studies/): Split the signup webpack bundle, removed blocking dependencies, and established a frozen performance baseline. Drove signup LCP p75 from 9.8s down to 3.19s (-67%) with render delay from 8.4s to 2.6s, monitored via 7 RUM dashboards and 6 production alerts.
-- [Design System and Migration Engine](https://james-coombs.com/case-studies/): Built a suite of 12 custom CLI tools and 48 JSON data files to automate the codebase transition of 962 files, alongside a 60-component design system. Cut legacy Material UI files from 999 to 792 while growing Design System files to 508, purging 275 files (-18.7 MB unpacked).
+- [SEO Landing Page Engine](https://james-coombs.com/case-studies/): Built a dynamic landing page generation engine using Next.js API routes, Algolia, Cloudinary, and GitLab CI/CD, automating the publishing of over 400 location-based landing pages with interactive enterprise chart and graph visualizations.
+- [Cross-Session State Synchronization](https://james-coombs.com/case-studies/): Engineered a cross-session favoriting system using the BroadcastChannel API for real-time cross-tab synchronization and authenticated session merging, driving over 3,000 new user signups and 6,000 saved items in two months.
+- [Signup Performance Overhaul](https://james-coombs.com/case-studies/): Split the signup webpack bundle, removed blocking dependencies, and established a frozen performance baseline. Drove signup LCP p75 from 9.8s down to 3.19s (-67%) with render delay from 8.4s to 2.6s, monitored via 7 RUM observability dashboards managed as code and 6 production alerts.
+- [Design System and Migration Engine](https://james-coombs.com/case-studies/): Built a suite of 12 custom CLI tools, 48 JSON data files, and a 594-line playbook to automate a 962-file Material UI migration (cutting legacy MUI files from 999 to 792 and growing Design System files to 508, with 24 of 34 migration PRs authored by 4 peer engineers), alongside a 60-component design system across 14 versions. Purged legacy icons across 19 packages and 275 files (-18.7 MB unpacked, -19.3 MB packaged).
 
 ## Other Infrastructure & Tooling
-- [Agentic AI Governance Layer](https://james-coombs.com/blog/ai-agent-safety-architecture/): Codified safety system for AI agents enforcing runtime hooks across 1,802 lines and 13 scripts, backed by 219 tests and 1,251 manual approvals.
-- [High-Performance Transcript Rendering Engine](https://james-coombs.com/resume/#rev): Architectural overhaul to performance engineering resulting in the deployment of RUM regression alerting across the highest-traffic pages.
+- [Agentic AI Governance Layer](https://james-coombs.com/blog/ai-agent-safety-architecture/): Codified safety system for AI agents enforcing runtime hooks across 1,802 lines and 13 scripts, backed by 219 tests and 1,251 manual approvals after an n=9 ablation study proved 0% compliance on passive written rules.
+- [Internal AI Developer Marketplace & Automated Blast-Radius CI](https://james-coombs.com/resume/#rev): Served as #1 human contributor (219 commits, 33 PRs authored, 26 merged) to the org-wide Claude Code platform auto-installed for every engineer, shipping 2 foundation plugins depended on by 3 other teams' plugins and a 4-stage full-stack C#/GraphQL/React workflow. Built an automated TypeScript UX Review CI pipeline with Nx reverse-dependency blast-radius scoring on every frontend monorepo PR, cutting false-positive rates from 9% to near zero.
+- [High-Performance Transcript Rendering Engine](https://james-coombs.com/resume/#rev): Cut Transcript Editor interaction latency (INP p98) from 2,169ms down to 112ms (-95%) on 4.5-hour files, reducing style recalculations from 57,000 to 9,500 elements.
 
 ## Primary Pages
 - [Home Page](https://james-coombs.com/): Engineering discipline overview and impact highlights.
@@ -23,8 +25,3 @@
 - [Resume & Experience](https://james-coombs.com/resume/): Detailed timeline with deep-linked career achievements, leadership roles, and skill matrix.
 - [Technical Blog Index](https://james-coombs.com/blog/): Essays on web performance, component migration engines, and AI safety.
 - [RSS Feed](https://james-coombs.com/rss.xml): Machine-readable XML feed of technical writing.
-
-## Foundational & Personal Projects
-- [Yamba](https://github.com/james-coombs/yamba-client/): Ember.js and Ruby on Rails full-stack application.
-- [Back\Log](https://github.com/james-coombs/back-log-client/): Game tracking application using Ruby on Rails, PostgreSQL, and Handlebars.
-- [Sweaters for Turtles](https://github.com/chardeemcdennis/sweaters-for-turtles-client/): E-commerce mock app with Express.js, MongoDB, and Stripe API.

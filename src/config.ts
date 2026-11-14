@@ -2,10 +2,10 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE =
-  "James Coombs | Staff UX Engineer & AI Systems Architect";
+  "James Coombs | Staff UX Engineer & Product Architect";
 
 export const SITE_DESCRIPTION =
-  "Staff UX Engineer specializing in AI Governance, Agentic Safety Architecture, Design System Migrations at scale, and Web Performance Engineering.";
+  "Staff UX Engineer specializing in Product Architecture, Design Systems at scale, Web Performance Engineering, and AI Execution Governance.";
 
 export const SITE_URL = "https://james-coombs.com";
 export const SITE_AUTHOR = "James Coombs";
@@ -46,26 +46,64 @@ export const CAREER_PROJECTS: Project[] = [
     overview:
       "A 1,802-line governance system for AI agents that enforces active safety hooks and coding standards across production repositories.",
     description:
-      "Built and empirically validated an active enforcement engine for AI coding agents across 13 scripts, backed by 219 tests and 1,251 manual approvals. Replaced passive documentation with hook-based runtime gating, achieving 100% compliance in agentic workflows.",
+      "Built and empirically validated an active enforcement engine for AI coding agents across 13 scripts, backed by 219 tests and 1,251 manual approvals after an n=9 ablation study proved 0% compliance on passive rules. Added a 42-run control-arm benchmark to govern org skill authoring.",
     url: "/resume/#rev",
     repo: "https://github.com/james-coombs",
     badge: "AI Governance",
   },
   {
+    id: "internal-ai-marketplace",
+    category: "career",
+    title: "Internal AI Developer Marketplace & Full-Stack Workflows",
+    technologies: [
+      "TypeScript",
+      "C#",
+      "GraphQL",
+      "React",
+      "Claude Code Plugins",
+    ],
+    overview:
+      "Org-wide AI developer platform and foundational plugin architecture auto-installed across engineering environments.",
+    description:
+      "Served as #1 human contributor (219 commits, 33 PRs authored, 26 merged) to the org-wide Claude Code platform, shipping 2 foundation plugins depended on by 3 other teams' plugins and a 4-stage full-stack C#/GraphQL/React workflow calibrated across 12 runs (11 merged PRs).",
+    url: "/resume/#rev",
+    repo: "https://github.com/james-coombs",
+    badge: "AI Platform",
+  },
+  {
+    id: "ux-review-blast-radius-ci",
+    category: "career",
+    title: "Automated PR Review & Dependency Blast-Radius CI",
+    technologies: [
+      "TypeScript",
+      "Nx",
+      "AST Analysis",
+      "GitHub Actions",
+      "Playwright",
+    ],
+    overview:
+      "Automated frontend monorepo PR review pipeline with reverse-dependency blast-radius scoring.",
+    description:
+      "Built an automated TypeScript UX Review CI pipeline with Nx reverse-dependency blast-radius scoring running on every frontend monorepo PR (evaluating 43 PRs across 11+ authors with 2,036 findings in its first 14-day window and 21 PRs with 844 findings in the second), driving false-positive rates from 9% to near zero.",
+    url: "/resume/#rev",
+    repo: "https://github.com/james-coombs",
+    badge: "CI Architecture",
+  },
+  {
     id: "migration-cli-bot",
     category: "career",
-    title: "Automated Component Migration Engine",
+    title: "Automated Component Migration & Icon Build Engine",
     technologies: [
       "TypeScript",
       "Node.js",
       "CLI Tooling",
-      "5-Factor Scoring",
+      "AST Codemods",
       "Git Automation",
     ],
     overview:
-      "A suite of 12 CLI tools and an automated migration bot built to safely transition design system components at scale.",
+      "A suite of 12 CLI tools, 48 JSON data files, and a zero-barrel icon compilation platform built to transition design system components at scale.",
     description:
-      "Engineered an automated migration engine to transition 962 files (cutting legacy Material UI files from 999 to 792 and growing Design System files to 508) across 48 JSON data files, purging 275 files and dropping 18.7 MB unpacked install size.",
+      "Shipped 12 custom CLI tools, 48 JSON data files (as of 2026-11-05), and a 594-line playbook driving a 962-file Material UI migration (cutting legacy MUI files from 999 to 792 and growing Design System files to 508, with 24 of 34 migration PRs authored by 4 peer engineers). Owned the shared icon platform across 30 releases (7,798 generated React components across 23,694 files consumed by 20 packages), purging 275 legacy files (-18.7 MB unpacked).",
     url: "/resume/#rev",
     repo: "https://github.com/james-coombs",
     badge: "DS Migration",
@@ -92,11 +130,11 @@ export const CAREER_PROJECTS: Project[] = [
     id: "radix-tailwind-design-system",
     category: "career",
     title: "Scalable Radix & Tailwind Component System",
-    technologies: ["React", "TypeScript", "Tailwind CSS", "Radix UI", "Astro"],
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Radix UI", "Vitest"],
     overview:
       "An enterprise design system scaled from ground zero to 60 accessible production components.",
     description:
-      "Architected a unified design system discipline across 14 published versions with 100% test coverage (~1,300 Vitest tests), enabling PMs and designers to prototype and ship production code directly to feature branches.",
+      "Architected a 60-component accessible design system across 14 published versions with 100% test coverage (~1,300 Vitest tests). Built AI design-to-code cleanup workflows enabling 4 Product Managers to ship working feature branches in 8 hours and mentored a UX designer to merge 67 pull requests across 3 repositories.",
     url: "/resume/#rev",
     repo: "https://github.com/james-coombs",
     badge: "Design Systems",
@@ -115,84 +153,14 @@ export const CAREER_PROJECTS: Project[] = [
     overview:
       "Automated dynamic landing page creation pipeline for multi-channel marketing campaigns.",
     description:
-      "Architected an automated dynamic page engine leveraging Algolia search indexing, Cloudinary media processing, and custom Next.js API routes.",
+      "Architected an automated dynamic page engine using Algolia search indexing, Cloudinary media processing, GitLab CI/CD, and Next.js API routes to automatically publish over 400 location-based landing pages with interactive enterprise chart and graph visualizations.",
     url: "/resume/#cervello",
     repo: "https://github.com/james-coombs",
     badge: "Architecture",
   },
 ];
 
-export const PERSONAL_PROJECTS: Project[] = [
-  {
-    id: "yamba",
-    category: "personal",
-    title: "Yamba",
-    technologies: ["Ember.js", "Ruby on Rails", "PostgreSQL"],
-    overview:
-      "Create your own boards to host pages made by you or other users! Post text and images to custom boards.",
-    description:
-      "A custom client built with Ember.js and an API powered by Ruby on Rails and PostgreSQL. Explored routing, views, custom component interactions, and API action handling.",
-    url: "https://james-coombs.github.io/yamba-client",
-    repo: "https://github.com/james-coombs/yamba-client",
-    badge: "Full Stack",
-  },
-  {
-    id: "sweaters-for-turtles",
-    category: "personal",
-    title: "Sweaters for Turtles",
-    technologies: [
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Handlebars",
-      "Stripe API",
-    ],
-    overview: "Shop for sweaters and checkout with Stripe payment integration.",
-    description:
-      "Developed as a team project using Express.js, MongoDB, and custom Handlebars templates. Integrated the Stripe API for handling mock ecommerce checkouts.",
-    url: "https://chardeemcdennis.github.io/sweaters-for-turtles-client",
-    repo: "https://github.com/chardeemcdennis/sweaters-for-turtles-client",
-    badge: "Team Project",
-  },
-  {
-    id: "backlog",
-    category: "personal",
-    title: "Back\\Log",
-    technologies: ["Ruby on Rails", "PostgreSQL", "Handlebars", "JavaScript"],
-    overview: "Keep record of your gaming progress and log play history.",
-    description:
-      "First full-stack pet project built from scratch. Feature-rich CRUD application leveraging Ruby on Rails REST endpoints and a frontend Handlebars client.",
-    url: "https://james-coombs.github.io/back-log-client",
-    repo: "https://github.com/james-coombs/back-log-client",
-    badge: "Pet Project",
-  },
-  {
-    id: "tic-tac-toe",
-    category: "personal",
-    title: "Tic-Tac-Toe Client",
-    technologies: ["JavaScript", "jQuery", "AJAX", "CSS3"],
-    overview:
-      "Play Tic-Tac-Toe, persist game progress, and track player match stats.",
-    description:
-      "First frontend web application built during early development training. Features state tracking, API authentication, and dynamic game board rendering.",
-    url: "https://james-coombs.github.io/tic-tac-toe",
-    repo: "https://github.com/james-coombs/project-1-tic-tac-toe",
-    badge: "First Web App",
-  },
-  {
-    id: "biological-samples-csv-api",
-    category: "personal",
-    title: "Biological Samples CSV API",
-    technologies: ["Ruby on Rails", "ERB", "CSV Parsing"],
-    overview:
-      "API test fixture for importing proprietary sample CSV files and returning structured JSON data.",
-    description:
-      "Built to parse biological sample data from CSV format into JSON responses. Experimented with server-rendered Rails ERB views alongside API endpoints.",
-    url: "https://samples-csv-api.herokuapp.com/samples",
-    repo: "https://github.com/james-coombs/rails-csv-api",
-    badge: "API Tooling",
-  },
-];
+export const PERSONAL_PROJECTS: Project[] = [];
 
 export interface Skill {
   name: string;
@@ -233,18 +201,18 @@ export const CASE_STUDIES: CASE_STUDY[] = [
     problem:
       "Marketing needed to launch high-converting, SEO-optimized landing pages instantly, but a manual engineering process took over a month to execute.",
     architecture:
-      "Built a dynamic landing page generation engine leveraging Next.js API routes, Algolia, Cloudinary, and GitLab CI/CD. Built a custom Node.js CLI tool to map listing data to image assets.",
+      "Built a dynamic landing page generation engine using Next.js API routes, Algolia, Cloudinary, and GitLab CI/CD. Built a custom Node.js CLI tool to map listing data to image assets.",
     outcome:
-      "Replaced the month-long bottleneck by automating the publishing of over 400 location-based landing pages, allowing marketing to deploy data-driven shopping experiences at scale.",
+      "Replaced the month-long bottleneck by automating the publishing of over 400 location-based landing pages with enterprise chart and graph visualizations, allowing marketing to deploy data-driven experiences at scale.",
     url: "/resume/#cervello",
   },
   {
     id: "cross-session-favorites",
     title: "Cross-Session State Synchronization (Favorites)",
     problem:
-      "Users needed to save properties across tabs and sessions seamlessly without being forced to create an account immediately.",
+      "Users needed to save properties across tabs and sessions without being forced to create an account immediately.",
     architecture:
-      "Engineered a complex cross-session favoriting system leveraging the BroadcastChannel API for real-time cross-tab sync, and local storage to handle the anonymous-to-authenticated state merge.",
+      "Engineered a complex cross-session favoriting system using the BroadcastChannel API for real-time cross-tab sync, and local storage to handle the anonymous-to-authenticated state merge.",
     outcome:
       "Drove over 3,000 new user signups and 6,000 saved items within the first two months of launch.",
     url: "/resume/#cervello",
@@ -257,7 +225,7 @@ export const CASE_STUDIES: CASE_STUDY[] = [
     architecture:
       "Split the signup webpack bundle, removed blocking dependencies, and established a frozen performance baseline.",
     outcome:
-      "Dropped signup LCP p75 from 9.8s to 3.19s (-67%) with render delay reduced from 8.4s to 2.6s. Built 7 RUM observability dashboards and 6 production alerts to ensure performance stayed locked.",
+      "Dropped signup LCP p75 from 9.8s to 3.19s (-67%) with render delay reduced from 8.4s to 2.6s. Built 7 RUM observability dashboards managed as code and 6 production alerts to ensure performance stayed locked.",
     url: "/resume/#rev",
   },
   {
@@ -266,9 +234,9 @@ export const CASE_STUDIES: CASE_STUDY[] = [
     problem:
       "Moving 962 files from Material UI to a custom Radix/Tailwind system without breaking production.",
     architecture:
-      "Built a suite of 12 custom CLI tools and 48 JSON data files to automate the codebase transition, alongside a 60-component design system.",
+      "Built a suite of 12 custom CLI tools, 48 JSON data files, and a 594-line playbook to automate the codebase transition, alongside a 60-component design system across 14 versions.",
     outcome:
-      'Shipped the framework migration cutting legacy Material UI files from 999 down to 792 while Design System imports grew to 508, purging 275 legacy files (-18.7 MB unpacked) under an automated "Design to Production" pipeline.',
+      "Shipped the framework migration cutting legacy Material UI files from 999 down to 792 while Design System imports grew to 508 (with 24 of 34 migration PRs authored by 4 peer engineers), purging 275 legacy files (-18.7 MB unpacked) and enabling 4 Product Managers to ship working feature branches in 8 hours.",
     url: "/resume/#rev",
   },
 ];
